@@ -6,4 +6,3 @@ dist
 Dockerfile
 .dockerignore
 README.md
-nginx.conf
