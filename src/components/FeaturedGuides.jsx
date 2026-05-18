@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Link from 'next/link';
 const guides = [
   {
     icon: '/asstes/essentials/Vector-3.svg',
@@ -98,12 +98,12 @@ const FeaturedGuides = () => {
               </div>
 
               {/* CTA Button */}
-              <div className="w-auto lg:w-56 h-7 lg:h-12 px-6 lg:px-8 py-2 bg-P2-Gold rounded-[100px] inline-flex justify-center items-center gap-2 overflow-hidden cursor-pointer hover:bg-opacity-90 transition-all mt-2 lg:mt-0 group-hover:scale-[1.02]">
-                <div className="text-center text-P1-Navy text-[10px] lg:text-base font-semibold font-inter leading-none">Read the guide</div>
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-3 h-3 lg:w-4 lg:h-4">
+              <Link href="/contact" className="w-auto lg:w-56 h-7 lg:h-12 px-6 lg:px-8 py-2 bg-P2-Gold rounded-[100px] inline-flex justify-center items-center gap-2 overflow-hidden cursor-pointer hover:bg-opacity-90 transition-all mt-2 lg:mt-0 group-hover:scale-[1.02] group/btn">
+                <div className="text-center text-P1-Navy text-[10px] lg:text-base font-semibold font-inter leading-none">Talk to a guide</div>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-3 h-3 lg:w-4 lg:h-4 transition-transform duration-300 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1">
                   <path d="M1 11L11 1M11 1H3.5M11 1V8.5" stroke="#042538" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </div>
+              </Link>
             </div>
           ))}
         </div>

@@ -8,32 +8,44 @@ const Testimonials = () => {
     {
       text: "I had a great experience working with Drift Financial, and the entire mortgage process was smooth from start to finish. Hassan Barada was especially outstanding—professional, responsive, and extremely knowledgeable. He took the time to explain everything clearly and made sure I felt confident at every step. His attention to detail and commitment to getting the best outcome really stood out. I highly recommend Drift Financial and Hassan to anyone looking for a stress-free and efficient mortgage experience.",
       name: "Jamal Maraachli",
-      role: "First-Time Homebuyer, Royal Oak MI",
-      image: "https://placehold.co/183x225"
+      role: "4 reviews",
+      image: "https://ui-avatars.com/api/?name=Jamal+Maraachli&background=5a67d8&color=fff",
+      url:"https://maps.app.goo.gl/UBh73FsYp64nukid8"
     },
     {
-      text: "Great experience working with Drift Financial. Everything was handled smoothly and professionally from start to finish. The team was responsive, transparent l, and made the entire process much less stressful than expected. I'd definitely recommend them to anyone looking for reliable and efficient mortgage support.",
-      name: "Abe Yeihey",
-      role: "Small Business Owner, Detroit MI",
-      image: "https://placehold.co/67x82"
+      text: "I had a great experience with Drift Financial. The whole process was easy, smooth, and stress free from start to finish. Pete was amazing to work with, professional, helpful, and always quick to answer any questions. He made everything simple and straightforward. I would highly recommend working with Pete and this team.",
+      name: "Shannon Nelson",
+      role: "9 reviews • 4 photos",
+      image: "https://ui-avatars.com/api/?name=Shannon+Nelson&background=2d3748&color=fff",
+      url:"https://maps.app.goo.gl/Evhf3Zg1PF88oNgx6"
     },
     {
-      text: "Drift Financial completely exceeded my expectations. They found me a rate that other lenders couldn't even match and closed my loan in record time. The communication was excellent.",
-      name: "Sarah Jenkins",
-      role: "Property Investor, Chicago IL",
-      image: "https://placehold.co/100x100"
+      text: "Drift Financial is hands down the best I’ve worked with. The team was professional, responsive, and made the entire process smooth from start to finish. Highly recommend to anyone looking for a reliable mortgage broker!",
+      name: "Al H",
+      role: "5 reviews",
+      image: "https://ui-avatars.com/api/?name=Al+H&background=2b6cb0&color=fff",
+      url:"https://maps.app.goo.gl/fYF16Fn4Xxa6f1Tv7"
     },
     {
-      text: "I was extremely nervous about refinancing, but the team at Drift Financial walked me through all my options and helped me make the best financial decision for my family. Highly recommend!",
-      name: "Michael Chen",
-      role: "Homeowner, Seattle WA",
-      image: "https://placehold.co/100x100"
+      text: "Had a great experience working with Gus at Drift! Great customer service and quick process! Thanks!",
+      name: "Anna Fatouhi",
+      role: "Local Guide • 13 reviews",
+      image: "https://ui-avatars.com/api/?name=Anna+Fatouhi&background=319795&color=fff",
+      url:"https://maps.app.goo.gl/SoKqBkZdgZLBDh1Q6"
     },
     {
-      text: "Professional, fast, and reliable. They truly understand the market and gave us the confidence we needed to purchase our dream home. The entire process was seamless.",
-      name: "Emily Rodriguez",
-      role: "First-Time Homebuyer, Austin TX",
-      image: "https://placehold.co/100x100"
+      text: "Great Experience all around. Quick closing, great communication.",
+      name: "Mike Ajami",
+      role: "3 reviews",
+      image: "https://ui-avatars.com/api/?name=Mike+Ajami&background=2f855a&color=fff",
+      url:"https://maps.app.goo.gl/piy99iwNz46km4XN9"
+    },
+    {
+      text: "Great service. Great experience overall",
+      name: "Sami Hammoud",
+      role: "9 reviews",
+      image: "https://ui-avatars.com/api/?name=Sami+Hammoud&background=744210&color=fff",
+      url:"https://maps.app.goo.gl/wSxPPkHs3uHy5Y7r5"
     }
   ];
 
@@ -112,7 +124,13 @@ const Testimonials = () => {
             const isActive = index === activeIndex;
             if (!isActive) return null;
             return (
-              <div key={testimonial.name} className="w-full px-6 py-8 bg-white rounded-2xl flex flex-col justify-between items-start overflow-hidden">
+              <a 
+                href={testimonial.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                key={testimonial.name} 
+                className="w-full px-6 py-8 bg-white rounded-2xl flex flex-col justify-between items-start overflow-hidden cursor-pointer hover:shadow-lg transition-shadow"
+              >
                 <div className="flex flex-col justify-start items-start gap-4 flex-1">
                   <div className="flex justify-start items-center gap-0.5 shrink-0">
                     {[...Array(5)].map((_, i) => <StarIcon key={i} />)}
@@ -130,7 +148,7 @@ const Testimonials = () => {
                     <div className="text-Secondary-Deep-Navy text-[10px] font-normal font-inter leading-4">{testimonial.role}</div>
                   </div>
                 </div>
-              </div>
+              </a>
             );
           })}
         </div>
@@ -146,9 +164,12 @@ const Testimonials = () => {
               const isActive = index === activeIndex;
               
               return (
-                <div 
+                <a 
+                  href={testimonial.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   key={testimonial.name} 
-                  className="px-6 py-8 bg-white rounded-2xl flex flex-col justify-between items-start shrink-0 overflow-hidden transition-all duration-700 ease-in-out"
+                  className="px-6 py-8 bg-white rounded-2xl flex flex-col justify-between items-start shrink-0 overflow-hidden transition-all duration-700 ease-in-out cursor-pointer hover:shadow-lg"
                   style={{
                     width: isActive ? '420px' : '320px',
                     height: isActive ? '380px' : '280px',
@@ -177,7 +198,7 @@ const Testimonials = () => {
                       </div>
                     </div>
                   </div>
-                </div>
+                </a>
               );
             })}
           </div>
