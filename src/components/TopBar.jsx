@@ -19,7 +19,7 @@ const TopBar = () => {
             <a href="#" className="transition-opacity hover:opacity-80">
               <img src="/asstes/facebook.svg" alt="Facebook" className="w-3 h-3 lg:w-4 lg:h-4" />
             </a>
-            <a href="#" className="transition-opacity hover:opacity-80">
+            <a href="https://www.linkedin.com/posts/drift-financial1_were-excited-to-introduce-drift-financial-activity-7455681479495327746-To69?utm_source=share&utm_medium=member_ios&rcm=ACoAAA-fGA4B6AsGyLx-7mHU_qcNx9wFuDHYaB0" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-80">
               <img src="/asstes/linkdin.svg" alt="LinkedIn" className="w-3 h-3 lg:w-4 lg:h-4" />
             </a>
             <a href="#" className="transition-opacity hover:opacity-80">

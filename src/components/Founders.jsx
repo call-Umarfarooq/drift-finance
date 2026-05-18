@@ -1,18 +1,21 @@
 import React from 'react';
 
-const Founders = () => {
+const Founders = ({ titleStart = "Your Future. ", titleGold = "Our Commitment.", showDescription = true }) => {
   const founders = [
     {
       name: "Pete Grigoriou",
-      image: "/funture-commitment /Rectangle 44.png"
+      image: "/funture-commitment /Rectangle 44.png",
+      linkedin: "https://www.linkedin.com/in/pete-grigoriou-41293173?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
     },
     {
       name: "Gassan Fatouhi",
-      image: "/funture-commitment /Rectangle 44-1.png"
+      image: "/funture-commitment /Rectangle 44-1.png",
+      linkedin: "https://www.linkedin.com/in/gassan-fatouhi-148666405?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
     },
     {
       name: "Hassan Barada",
-      image: "/funture-commitment /Rectangle 44-2.png"
+      image: "/funture-commitment /Rectangle 44-2.png",
+      linkedin: "https://www.linkedin.com/in/hassan-barada-114a6a85?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
     }
   ];
 
@@ -22,19 +25,27 @@ const Founders = () => {
         
         {/* Heading */}
         <div className="w-full max-w-[1060px] text-center">
-          <span className="text-Secondary-Deep-Navy text-2xl lg:text-5xl font-bold font-poppins">Your Future. </span>
-          <span className="text-P2-Gold text-2xl lg:text-5xl font-bold font-playfair italic">Our Commitment.</span>
+          <span className="text-Secondary-Deep-Navy text-2xl lg:text-5xl font-bold font-poppins">{titleStart}</span>
+          <span className="text-P2-Gold text-2xl lg:text-5xl font-bold font-playfair italic">{titleGold}</span>
         </div>
 
         {/* Description */}
-        <div className="w-full max-w-[954px] opacity-70 text-center text-Secondary-Deep-Navy text-[10px] lg:text-base font-medium font-inter leading-4 lg:leading-5">
-          Our three founders and their team bring 40+ years of combined mortgage expertise to every client relationship. We don&apos;t hand you off to junior staff — you get direct access to seasoned principals who are personally invested in securing the best outcome for you. Ready to take the next step?
-        </div>
+        {showDescription && (
+          <div className="w-full max-w-[954px] opacity-70 text-center text-Secondary-Deep-Navy text-[10px] lg:text-base font-medium font-inter leading-4 lg:leading-5">
+            Our three founders and their team bring 40+ years of combined mortgage expertise to every client relationship. We don&apos;t hand you off to junior staff — you get direct access to seasoned principals who are personally invested in securing the best outcome for you. Ready to take the next step?
+          </div>
+        )}
 
         {/* Founders Grid */}
         <div className="w-full flex flex-col lg:flex-row justify-center items-center gap-5 lg:gap-10">
           {founders.map((founder, index) => (
-            <div key={index} className="w-full   h-[380px] lg:h-[473px] py-6 lg:py-10 flex flex-col justify-end items-center relative">
+            <a 
+              key={index} 
+              href={founder.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full   h-[380px] lg:h-[473px] py-6 lg:py-10 flex flex-col justify-end items-center relative cursor-pointer hover:opacity-90 transition-opacity duration-300"
+            >
               <img 
                 className="w-full h-full rounded-3xl object-cover absolute top-0 left-0" 
                 src={founder.image} 
@@ -45,7 +56,7 @@ const Founders = () => {
                   {founder.name}
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
 

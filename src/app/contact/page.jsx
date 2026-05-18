@@ -16,7 +16,7 @@ const ContactPage = () => {
             <div className=' mt-[40px] md:mt-20'></div>
             <ContactDirectly />
             <div className=' mt-[40px] md:mt-20'></div>
-            <Founders />
+            <Founders titleStart="Speak Directly With A " titleGold="Principal" showDescription={false} />
             <div className=' mt-[40px] md:mt-20'></div>
             <Footer />
         </main>

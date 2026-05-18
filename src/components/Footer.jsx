@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -10,7 +11,9 @@ const Footer = () => {
           
           {/* Logo & Disclaimer */}
           <div className="w-full lg:max-w-[340px] flex flex-col gap-4 lg:gap-6">
-            <img src="/asstes/footer-icon.svg" alt="Drift Financial" className="w-20 lg:w-48" />
+            <Link href="/">
+              <img src="/asstes/footer-icon.svg" alt="Drift Financial" className="w-20 lg:w-48 cursor-pointer" />
+            </Link>
             <p className="text-white text-[8px] lg:text-[10px] font-normal font-inter leading-3 lg:leading-4 opacity-80 text-justify">
               Drift Financial Corporation is an Equal Housing Lender. As prohibited by federal law, we do not engage in business practices that discriminate based on race, color, religion, national origin, sex, marital status, age (provided you have the capacity to enter into a binding contract), because all or part of your income may be derived from any public assistance program, or because you have, in good faith, exercised any right under the Consumer Credit Protection Act. The federal agency that administers our compliance with these federal laws is the Federal Trade Commission, Equal Credit Opportunity, Washington, DC 20580.
             </p>
@@ -23,12 +26,12 @@ const Footer = () => {
             <div className="flex flex-col gap-3 lg:gap-4">
               <div className="h-0 lg:h-6 hidden lg:block"></div>
               <div className="flex flex-col gap-3">
-                <a href="#" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">About Us</a>
-                <a href="#" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Services</a>
-                <a href="#" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Educational</a>
-                <a href="#" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Testimonials</a>
-                <a href="#" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Achievements</a>
-                <a href="#" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Careers</a>
+                <a href="/about-us" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">About Us</a>
+                <a href="/finance-services" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Services</a>
+                <a href="/finanace-education" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Educational</a>
+                <a href="/testimonials" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Testimonials</a>
+                <a href="/achievements" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Achievements</a>
+                <a href="#/carears" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Careers</a>
               </div>
             </div>
 
@@ -36,12 +39,12 @@ const Footer = () => {
             <div className="flex flex-col gap-3 lg:gap-4">
               <h4 className="text-white text-sm font-bold font-inter leading-4 lg:text-lg lg:leading-6">Loan Programs</h4>
               <div className="flex flex-col gap-3">
-                <a href="#" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Conventional Loans</a>
-                <a href="#" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">FHA Loans</a>
-                <a href="#" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">VA Loans</a>
-                <a href="#" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">1st Lien Home Equity</a>
-                <a href="#" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">2nd Lien / HELOC</a>
-                <a href="#" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Non-QM Loans</a>
+                <a href="/conventional-loan" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Conventional Loans</a>
+                <a href="/fha-loans" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">FHA Loans</a>
+                <a href="/va-loans" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">VA Loans</a>
+                <a href="/heloc" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">HELOC</a>
+                <a href="/dscr-loans" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">DSCR Loans</a>
+                <a href="/non-qm-loans" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Non-QM Loans</a>
               </div>
             </div>
 
@@ -63,7 +66,7 @@ const Footer = () => {
                 <a href="#" className="w-4 h-4 lg:w-8 lg:h-8 rounded-full bg-P2-Gold flex justify-center items-center hover:bg-opacity-90 transition-colors">
                   <svg width="8" height="8" className="lg:w-4 lg:h-4" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                 </a>
-                <a href="#" className="w-4 h-4 lg:w-8 lg:h-8 rounded-full bg-P2-Gold flex justify-center items-center hover:bg-opacity-90 transition-colors">
+                <a href="https://www.linkedin.com/posts/drift-financial1_were-excited-to-introduce-drift-financial-activity-7455681479495327746-To69?utm_source=share&utm_medium=member_ios&rcm=ACoAAA-fGA4B6AsGyLx-7mHU_qcNx9wFuDHYaB0" target="_blank" rel="noopener noreferrer" className="w-4 h-4 lg:w-8 lg:h-8 rounded-full bg-P2-Gold flex justify-center items-center hover:bg-opacity-90 transition-colors">
                   <img src="/asstes/linkdin.svg" alt="LinkedIn" className="w-2 h-2 lg:w-4 lg:h-4 brightness-0 invert" />
                 </a>
                 <a href="#" className="w-4 h-4 lg:w-8 lg:h-8 rounded-full bg-P2-Gold flex justify-center items-center hover:bg-opacity-90 transition-colors">

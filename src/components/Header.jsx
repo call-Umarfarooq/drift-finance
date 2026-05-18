@@ -28,15 +28,21 @@ const Header = ({ darkMode = false }) => {
       <div className="hidden lg:flex justify-end items-center gap-8">
         <nav className="flex justify-start items-center gap-9">
           <Link href={"/about-us"} className={`cursor-pointer ${textColor} text-base font-normal font-inter hover:text-P2-Gold transition-colors`}>About Us</Link>
-          <div className="relative flex justify-start items-center gap-1 cursor-pointer group py-2">
-            <div className={`${textColor} text-base font-normal font-inter group-hover:text-P2-Gold transition-colors`}>Services</div>
-            <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg" className="mt-0.5">
-              <path d="M1 1L6 6L11 1" stroke={strokeColor} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:stroke-P2-Gold transition-colors"/>
-            </svg>
+          <div className="relative flex justify-start items-center gap-1 group py-2">
+            <Link href="/finance-services" className={`flex items-center gap-1 cursor-pointer ${textColor} text-base font-normal font-inter group-hover:text-P2-Gold transition-colors`}>
+              Services
+              <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg" className="mt-0.5">
+                <path d="M1 1L6 6L11 1" stroke={strokeColor} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:stroke-P2-Gold transition-colors"/>
+              </svg>
+            </Link>
             {/* Dropdown Menu */}
             <div className="absolute top-full left-0 mt-0 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col py-2 z-50 border border-neutral-100">
-              <Link href="/finance-services" className="px-4 py-2 text-P1-Navy hover:bg-neutral-100 hover:text-P2-Gold text-sm font-medium transition-colors">Finance Services</Link>
               <Link href="/conventional-loan" className="px-4 py-2 text-P1-Navy hover:bg-neutral-100 hover:text-P2-Gold text-sm font-medium transition-colors">Conventional Loan</Link>
+              <Link href="/fha-loans" className="px-4 py-2 text-P1-Navy hover:bg-neutral-100 hover:text-P2-Gold text-sm font-medium transition-colors">FHA Loans</Link>
+              <Link href="/va-loans" className="px-4 py-2 text-P1-Navy hover:bg-neutral-100 hover:text-P2-Gold text-sm font-medium transition-colors">VA Loans</Link>
+              <Link href="/heloc" className="px-4 py-2 text-P1-Navy hover:bg-neutral-100 hover:text-P2-Gold text-sm font-medium transition-colors">HELOC</Link>
+              <Link href="/dscr-loans" className="px-4 py-2 text-P1-Navy hover:bg-neutral-100 hover:text-P2-Gold text-sm font-medium transition-colors">DSCR Loans</Link>
+              <Link href="/non-qm-loans" className="px-4 py-2 text-P1-Navy hover:bg-neutral-100 hover:text-P2-Gold text-sm font-medium transition-colors">Non-QM Loans</Link>
             </div>
           </div>
           <Link href={"/finanace-education"} className={`cursor-pointer ${textColor} text-base font-normal font-inter hover:text-P2-Gold transition-colors`}>Educational</Link>
@@ -58,9 +64,13 @@ const Header = ({ darkMode = false }) => {
           <Link href={"/about-us"} onClick={() => setIsMobileMenuOpen(false)} className="text-P1-Navy text-base font-semibold font-inter py-2 border-b border-neutral-100">About Us</Link>
           
           <div className="flex flex-col gap-2 py-2 border-b border-neutral-100">
-            <div className="text-P1-Navy text-base font-semibold font-inter">Services</div>
-            <Link href="/finance-services" onClick={() => setIsMobileMenuOpen(false)} className="pl-4 text-P1-Navy text-sm font-normal font-inter py-1">Finance Services</Link>
+            <Link href="/finance-services" onClick={() => setIsMobileMenuOpen(false)} className="text-P1-Navy text-base font-semibold font-inter">Services</Link>
             <Link href="/conventional-loan" onClick={() => setIsMobileMenuOpen(false)} className="pl-4 text-P1-Navy text-sm font-normal font-inter py-1">Conventional Loan</Link>
+            <Link href="/fha-loans" onClick={() => setIsMobileMenuOpen(false)} className="pl-4 text-P1-Navy text-sm font-normal font-inter py-1">FHA Loans</Link>
+            <Link href="/va-loans" onClick={() => setIsMobileMenuOpen(false)} className="pl-4 text-P1-Navy text-sm font-normal font-inter py-1">VA Loans</Link>
+            <Link href="/heloc" onClick={() => setIsMobileMenuOpen(false)} className="pl-4 text-P1-Navy text-sm font-normal font-inter py-1">HELOC</Link>
+            <Link href="/dscr-loans" onClick={() => setIsMobileMenuOpen(false)} className="pl-4 text-P1-Navy text-sm font-normal font-inter py-1">DSCR Loans</Link>
+            <Link href="/non-qm-loans" onClick={() => setIsMobileMenuOpen(false)} className="pl-4 text-P1-Navy text-sm font-normal font-inter py-1">Non-QM Loans</Link>
           </div>
           
           <Link href={"/finanace-education"} onClick={() => setIsMobileMenuOpen(false)} className="text-P1-Navy text-base font-semibold font-inter py-2 border-b border-neutral-100">Educational</Link>
