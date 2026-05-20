@@ -9,7 +9,7 @@ const TopBar = () => {
         
         {/* Mobile View: Full Marquee scrolling */}
         <div className="w-full lg:hidden overflow-hidden relative flex items-center">
-          <div className="inline-flex whitespace-nowrap animate-marquee">
+          <div className="inline-flex whitespace-nowrap animate-marquee" style={{ animationDuration: '15s' }}>
             <span className="text-white text-[10px] font-semibold font-inter uppercase tracking-wider mx-4">
               {tagLine}
             </span>
@@ -41,7 +41,7 @@ const TopBar = () => {
 
         {/* Center Column: Scrolling Marquee */}
         <div className="hidden lg:flex w-2/4 overflow-hidden relative items-center justify-center">
-          <div className="inline-flex whitespace-nowrap animate-marquee">
+          <div className="inline-flex whitespace-nowrap animate-marquee" style={{ animationDuration: '15s' }}>
             <span className="text-white text-[12px] font-semibold font-inter uppercase tracking-wider mx-6">
               {tagLine}
             </span>
