@@ -60,16 +60,16 @@ const Footer = () => {
               </div>
               {/* Social Icons */}
               <div className="flex items-center gap-2 lg:gap-3 mt-1 lg:mt-2">
-                <a href="#" className="w-4 h-4 lg:w-8 lg:h-8 rounded-full bg-P2-Gold flex justify-center items-center hover:bg-opacity-90 transition-colors">
+                <a href="https://www.facebook.com/share/1DukVEsF6V/" target="_blank" rel="noopener noreferrer" className="w-4 h-4 lg:w-8 lg:h-8 rounded-full bg-P2-Gold flex justify-center items-center hover:bg-opacity-90 transition-colors">
                   <img src="/asstes/facebook.svg" alt="Facebook" className="w-2 h-2 lg:w-4 lg:h-4 brightness-0 invert" />
                 </a>
-                <a href="#" className="w-4 h-4 lg:w-8 lg:h-8 rounded-full bg-P2-Gold flex justify-center items-center hover:bg-opacity-90 transition-colors">
+                <a href="https://www.instagram.com/drift.financial1/" target="_blank" rel="noopener noreferrer" className="w-4 h-4 lg:w-8 lg:h-8 rounded-full bg-P2-Gold flex justify-center items-center hover:bg-opacity-90 transition-colors">
                   <svg width="8" height="8" className="lg:w-4 lg:h-4" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                 </a>
                 <a href="https://www.linkedin.com/posts/drift-financial1_were-excited-to-introduce-drift-financial-activity-7455681479495327746-To69?utm_source=share&utm_medium=member_ios&rcm=ACoAAA-fGA4B6AsGyLx-7mHU_qcNx9wFuDHYaB0" target="_blank" rel="noopener noreferrer" className="w-4 h-4 lg:w-8 lg:h-8 rounded-full bg-P2-Gold flex justify-center items-center hover:bg-opacity-90 transition-colors">
                   <img src="/asstes/linkdin.svg" alt="LinkedIn" className="w-2 h-2 lg:w-4 lg:h-4 brightness-0 invert" />
                 </a>
-                <a href="#" className="w-4 h-4 lg:w-8 lg:h-8 rounded-full bg-P2-Gold flex justify-center items-center hover:bg-opacity-90 transition-colors">
+                <a href="https://x.com/DriftFinancial0" target="_blank" rel="noopener noreferrer" className="w-4 h-4 lg:w-8 lg:h-8 rounded-full bg-P2-Gold flex justify-center items-center hover:bg-opacity-90 transition-colors">
                   <img src="/asstes/x.svg" alt="X" className="w-1.5 h-1.5 lg:w-3.5 lg:h-3.5 brightness-0 invert" />
                 </a>
               </div>
