@@ -9,16 +9,12 @@ const VALoanContent = () => {
         <div className="w-full lg:hidden mb-10">
           <div className="w-full relative rounded-[32px] overflow-hidden">
             <img
-              src="/asstes/conventainal-image .png"
+              src="/asstes/ba474f61bc599ba467dc585ad79658e79601976c.png"
               alt="VA Loan Home"
               className="w-full h-auto object-cover rounded-[32px]"
             />
             {/* Carousel dots */}
-            <div className="absolute bottom-6 left-0 right-0 flex justify-center items-center gap-1.5">
-              <div className="w-12 h-1 bg-white/40 rounded-full" />
-              <div className="w-12 h-1 bg-white/40 rounded-full" />
-              <div className="w-12 h-1 bg-P2-Gold rounded-full" />
-            </div>
+           
           </div>
         </div>
 
@@ -87,17 +83,13 @@ const VALoanContent = () => {
           <div className="w-full lg:flex-1 flex flex-col gap-10 lg:gap-20">
 
             {/* Desktop Image */}
-            <div className="hidden lg:block w-full relative rounded-[40px] overflow-hidden shadow-2xl">
+            <div className="hidden lg:block w-full relative rounded-[40px] overflow-hidden ">
               <img
-                src="/asstes/conventainal-image .png"
+                src="/asstes/ba474f61bc599ba467dc585ad79658e79601976c.png"
                 alt="VA Loan Home"
-                className="w-full h-[640px] object-cover rounded-[40px]"
+                className="w-full h-[640px] object-fill rounded-[40px]"
               />
-              <div className="absolute bottom-9 left-0 right-0 flex justify-center items-center gap-3">
-                <div className="w-20 h-2 bg-white/40 rounded-full" />
-                <div className="w-20 h-2 bg-white/40 rounded-full" />
-                <div className="w-20 h-2 bg-P2-Gold rounded-full" />
-              </div>
+             
             </div>
 
             {/* Contact Form */}
