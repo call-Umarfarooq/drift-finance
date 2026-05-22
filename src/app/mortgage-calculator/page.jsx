@@ -15,7 +15,7 @@ export default function MortgageCalculatorPage() {
   const [termValue, setTermValue] = useState("30");
   const [termType, setTermType] = useState("years"); // 'years' | 'months'
   const [paymentFrequency, setPaymentFrequency] = useState("12"); // '12' (Monthly) | '26' (Bi-Weekly) | '52' (Weekly)
-  
+
   const [propertyTax, setPropertyTax] = useState("1");
   const [propertyTaxType, setPropertyTaxType] = useState("percent"); // 'percent' | 'dollar'
   const [insurance, setInsurance] = useState("0.15");
@@ -23,10 +23,10 @@ export default function MortgageCalculatorPage() {
   const [pmi, setPmi] = useState("0");
   const [pmiType, setPmiType] = useState("percent"); // 'percent' | 'dollar'
   const [hoaFees, setHoaFees] = useState("0");
-  
+
   const [extraPayment, setExtraPayment] = useState("0");
   const [extraAnnual, setExtraAnnual] = useState("0");
-  
+
   // UI states
   const [isExtraOpen, setIsExtraOpen] = useState(false);
   const [results, setResults] = useState(null);
@@ -61,7 +61,7 @@ export default function MortgageCalculatorPage() {
     if (payments <= 0 || principal <= 0) return 0;
     const totalPaid = principal + totalInterest;
     const avgPayment = totalPaid / payments;
-    
+
     let rate = 0.05 / freq;
     for (let i = 0; i < 100; i++) {
       const factor = Math.pow(1 + rate, payments);
@@ -76,7 +76,7 @@ export default function MortgageCalculatorPage() {
   // Dynamic Down Payment & Loan Amount calculation
   const parsedPropertyValue = parseNumber(propertyValue);
   const parsedDownPaymentInput = parseNumber(downPayment);
-  
+
   let computedDownPayment = 0;
   if (downPaymentType === 'percent') {
     computedDownPayment = parsedPropertyValue * (parsedDownPaymentInput / 100);
@@ -90,16 +90,16 @@ export default function MortgageCalculatorPage() {
     const parsedInterestRate = parseFloat(interestRate) || 0;
     const parsedTermValue = parseFloat(termValue) || 30;
     const termMonths = termType === 'years' ? parsedTermValue * 12 : parsedTermValue;
-    
+
     // Property costs
     const parsedPropertyTax = parseFloat(propertyTax) || 0;
     const parsedInsurance = parseFloat(insurance) || 0;
     const parsedPmi = parseFloat(pmi) || 0;
     const parsedHoaFees = parseNumber(hoaFees);
-    
+
     // Calculate monthly equivalents for expenses
-    const monthlyTax = propertyTaxType === 'percent' 
-      ? parsedPropertyValue * (parsedPropertyTax / 100) / 12 
+    const monthlyTax = propertyTaxType === 'percent'
+      ? parsedPropertyValue * (parsedPropertyTax / 100) / 12
       : parsedPropertyTax / 12;
     const monthlyInsurance = insuranceType === 'percent'
       ? parsedPropertyValue * (parsedInsurance / 100) / 12
@@ -107,17 +107,17 @@ export default function MortgageCalculatorPage() {
     const monthlyPMI = pmiType === 'percent'
       ? loanAmount * (parsedPmi / 100) / 12
       : parsedPmi / 12;
-      
+
     // Extra payments
     const parsedExtraPayment = parseNumber(extraPayment);
     const parsedExtraAnnual = parseNumber(extraAnnual);
-    
+
     // Payments per year based on frequency
     const freq = parseInt(paymentFrequency); // 12, 26, 52
-    
+
     // Monthly P&I (standard baseline)
     const monthlyPI = calcPayment(loanAmount, parsedInterestRate, termMonths);
-    
+
     // Period Payment based on frequency
     let periodPI = monthlyPI;
     if (freq === 26) {
@@ -125,7 +125,7 @@ export default function MortgageCalculatorPage() {
     } else if (freq === 52) {
       periodPI = (monthlyPI * 12) / 52;
     }
-    
+
     // Generate amortization schedule
     let balance = loanAmount;
     let totalInterest = 0;
@@ -133,7 +133,7 @@ export default function MortgageCalculatorPage() {
     let paymentNum = 0;
     const schedule = [];
     const currentDate = new Date();
-    
+
     // Loop through payments
     const maxPayments = termMonths * 2 * (freq / 12);
     while (balance > 0.01 && paymentNum < maxPayments) {
@@ -141,16 +141,16 @@ export default function MortgageCalculatorPage() {
       const interestRatePerPeriod = parsedInterestRate / 100 / freq;
       const interest = balance * interestRatePerPeriod;
       let principal = periodPI - interest;
-      
+
       let extra = parsedExtraPayment * (12 / freq); // distribute monthly extra per period
       // Annual extra is applied once a year (e.g. paymentNum % freq === 0)
       if (paymentNum % freq === 0) {
         extra += parsedExtraAnnual;
       }
-      
+
       let actualPrincipal = principal;
       let actualExtra = extra;
-      
+
       if (actualPrincipal + actualExtra > balance) {
         if (actualPrincipal > balance) {
           actualPrincipal = balance;
@@ -159,19 +159,19 @@ export default function MortgageCalculatorPage() {
           actualExtra = balance - actualPrincipal;
         }
       }
-      
+
       balance -= (actualPrincipal + actualExtra);
       if (balance < 0) balance = 0;
-      
+
       totalInterest += interest;
       // Expense per period
       const taxPerPeriod = monthlyTax * (12 / freq);
       const insurancePerPeriod = monthlyInsurance * (12 / freq);
       const pmiPerPeriod = monthlyPMI * (12 / freq);
       const hoaPerPeriod = parsedHoaFees * (12 / freq);
-      
+
       totalTaxesInsurance += taxPerPeriod + insurancePerPeriod + pmiPerPeriod + hoaPerPeriod;
-      
+
       const paymentDate = new Date(currentDate);
       if (freq === 12) {
         paymentDate.setMonth(paymentDate.getMonth() + paymentNum);
@@ -180,7 +180,7 @@ export default function MortgageCalculatorPage() {
       } else if (freq === 52) {
         paymentDate.setDate(paymentDate.getDate() + paymentNum * 7);
       }
-      
+
       schedule.push({
         num: paymentNum,
         date: paymentDate,
@@ -191,20 +191,20 @@ export default function MortgageCalculatorPage() {
         balance: balance
       });
     }
-    
+
     // Calculations for donut charts
     const totalPaid = totalInterest + loanAmount + totalTaxesInsurance;
     const interestPercent = totalPaid > 0 ? (totalInterest / totalPaid) * 100 : 0;
     const principalPercent = totalPaid > 0 ? (loanAmount / totalPaid) * 100 : 0;
     const taxesPercent = totalPaid > 0 ? (totalTaxesInsurance / totalPaid) * 100 : 0;
-    
+
     // Savings vs no extra payments
     const noExtraTotalInterest = (monthlyPI * termMonths) - loanAmount;
     const interestSavings = noExtraTotalInterest - totalInterest;
-    
+
     // Net effective rate
     const netEffRate = calcEffectiveRate(loanAmount, totalInterest, paymentNum, freq);
-    
+
     // Set all results
     setResults({
       monthlyPI,
@@ -265,7 +265,7 @@ export default function MortgageCalculatorPage() {
 
   const handleCSVExport = () => {
     if (!results || !results.schedule.length) return;
-    
+
     const headers = ['#', 'Date', 'Payment', 'Principal', 'Interest', 'Extra', 'Balance'];
     const rows = results.schedule.map(r => [
       r.num,
@@ -276,10 +276,10 @@ export default function MortgageCalculatorPage() {
       r.extra.toFixed(2),
       r.balance.toFixed(2)
     ]);
-    
-    const csvContent = "data:text/csv;charset=utf-8," 
+
+    const csvContent = "data:text/csv;charset=utf-8,"
       + [headers, ...rows].map(e => e.join(",")).join("\n");
-      
+
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement("a");
     link.setAttribute("href", encodedUri);
@@ -309,12 +309,10 @@ export default function MortgageCalculatorPage() {
       {/* CALCULATOR MAIN CONTENT */}
       <main className="flex-1 flex justify-center py-10 lg:py-16 px-6 lg:px-10">
         <div className="w-full max-w-[1360px] flex flex-col gap-8 lg:gap-12">
-          
+
           {/* Header Typography */}
           <div className="text-center flex flex-col gap-3 lg:gap-4 print:hidden">
-            <span className="text-P2-Gold text-xs lg:text-lg font-bold uppercase tracking-wider">
-              Fintech tools
-            </span>
+
             <h1 className="text-P1-Navy text-3xl lg:text-6xl font-semibold font-inter capitalize leading-tight">
               Mortgage <span className="text-P2-Gold font-playfair italic">Calculator</span>
             </h1>
@@ -332,10 +330,10 @@ export default function MortgageCalculatorPage() {
 
           {/* Main Calculator Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            
+
             {/* LEFT COLUMN: Inputs (lg:col-span-6) */}
             <div className="lg:col-span-6 flex flex-col gap-6 print:hidden">
-              
+
               {/* Card 1: Mortgage Details */}
               <div className="bg-white border border-neutral-200 rounded-3xl p-6 lg:p-8 shadow-sm flex flex-col gap-6">
                 <h3 className="text-P1-Navy text-lg lg:text-xl font-bold border-b border-neutral-100 pb-3 uppercase tracking-wider">
@@ -348,8 +346,8 @@ export default function MortgageCalculatorPage() {
                     <label className="text-P1-Navy text-xs lg:text-sm font-semibold">Property Value</label>
                     <div className="flex items-center bg-neutral-50 rounded-xl overflow-hidden border border-neutral-200 focus-within:border-P2-Gold focus-within:ring-2 focus-within:ring-P2-Gold/20 transition-all h-12">
                       <span className="pl-4 pr-1 text-P2-Gold font-bold text-base select-none">$</span>
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         value={propertyValue}
                         onChange={(e) => handleCommaChange(e.target.value, setPropertyValue)}
                         className="w-full h-full bg-transparent px-2 text-P1-Navy font-mono font-bold outline-none text-base"
@@ -362,20 +360,20 @@ export default function MortgageCalculatorPage() {
                     <label className="text-P1-Navy text-xs lg:text-sm font-semibold">Down Payment</label>
                     <div className="flex items-stretch bg-neutral-50 rounded-xl overflow-hidden border border-neutral-200 focus-within:border-P2-Gold focus-within:ring-2 focus-within:ring-P2-Gold/20 transition-all h-12">
                       {downPaymentType === 'dollar' && <span className="pl-4 pr-1 flex items-center text-P2-Gold font-bold text-base select-none">$</span>}
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         value={downPayment}
                         onChange={(e) => handleCommaChange(e.target.value, setDownPayment)}
                         className="w-full h-full bg-transparent px-3 text-P1-Navy font-mono font-bold outline-none text-base"
                       />
                       <div className="flex border-l border-neutral-200">
-                        <button 
+                        <button
                           onClick={() => setDownPaymentType('dollar')}
                           className={`px-3.5 h-full text-xs font-bold transition-all border-r border-neutral-200 cursor-pointer ${downPaymentType === 'dollar' ? 'bg-P2-Gold text-white' : 'bg-neutral-100 text-neutral-500 hover:bg-neutral-200'}`}
                         >
                           $
                         </button>
-                        <button 
+                        <button
                           onClick={() => setDownPaymentType('percent')}
                           className={`px-3.5 h-full text-xs font-bold transition-all cursor-pointer ${downPaymentType === 'percent' ? 'bg-P2-Gold text-white' : 'bg-neutral-100 text-neutral-500 hover:bg-neutral-200'}`}
                         >
@@ -390,10 +388,10 @@ export default function MortgageCalculatorPage() {
                     <label className="text-P1-Navy text-xs lg:text-sm font-semibold opacity-85">Mortgage Loan Amount</label>
                     <div className="flex items-center bg-neutral-100/60 rounded-xl overflow-hidden border border-neutral-200 h-12">
                       <span className="pl-4 pr-1 text-neutral-500 font-semibold text-base select-none">$</span>
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         value={formatWithCommas(Math.round(loanAmount))}
-                        readOnly 
+                        readOnly
                         className="w-full h-full bg-transparent px-2 text-neutral-600 font-mono font-bold outline-none text-base cursor-not-allowed"
                       />
                     </div>
@@ -403,8 +401,8 @@ export default function MortgageCalculatorPage() {
                   <div className="flex flex-col gap-2">
                     <label className="text-P1-Navy text-xs lg:text-sm font-semibold">Interest Rate</label>
                     <div className="flex items-stretch bg-neutral-50 rounded-xl overflow-hidden border border-neutral-200 focus-within:border-P2-Gold focus-within:ring-2 focus-within:ring-P2-Gold/20 transition-all h-12">
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         value={interestRate}
                         onChange={(e) => setInterestRate(e.target.value.replace(/[^\d.]/g, ''))}
                         className="w-full h-full bg-transparent px-4 text-P1-Navy font-mono font-bold outline-none text-base"
@@ -417,20 +415,20 @@ export default function MortgageCalculatorPage() {
                   <div className="flex flex-col gap-2">
                     <label className="text-P1-Navy text-xs lg:text-sm font-semibold">Amortization Period</label>
                     <div className="flex items-stretch bg-neutral-50 rounded-xl overflow-hidden border border-neutral-200 focus-within:border-P2-Gold focus-within:ring-2 focus-within:ring-P2-Gold/20 transition-all h-12">
-                      <input 
-                        type="number" 
+                      <input
+                        type="number"
                         value={termValue}
                         onChange={(e) => setTermValue(e.target.value)}
                         className="w-full h-full bg-transparent px-4 text-P1-Navy font-mono font-bold outline-none text-base"
                       />
                       <div className="flex border-l border-neutral-200">
-                        <button 
+                        <button
                           onClick={() => setTermType('years')}
                           className={`px-3 h-full text-xs font-bold transition-all border-r border-neutral-200 cursor-pointer ${termType === 'years' ? 'bg-P2-Gold text-white' : 'bg-neutral-100 text-neutral-500 hover:bg-neutral-200'}`}
                         >
                           Yr
                         </button>
-                        <button 
+                        <button
                           onClick={() => setTermType('months')}
                           className={`px-3 h-full text-xs font-bold transition-all cursor-pointer ${termType === 'months' ? 'bg-P2-Gold text-white' : 'bg-neutral-100 text-neutral-500 hover:bg-neutral-200'}`}
                         >
@@ -443,7 +441,7 @@ export default function MortgageCalculatorPage() {
                   {/* Payment Frequency */}
                   <div className="flex flex-col gap-2">
                     <label className="text-P1-Navy text-xs lg:text-sm font-semibold">Payment Frequency</label>
-                    <select 
+                    <select
                       value={paymentFrequency}
                       onChange={(e) => setPaymentFrequency(e.target.value)}
                       className="w-full h-12 bg-neutral-50 rounded-xl px-4 text-P1-Navy text-sm font-semibold outline-none border border-neutral-200 focus:border-P2-Gold cursor-pointer"
@@ -468,20 +466,20 @@ export default function MortgageCalculatorPage() {
                     <label className="text-P1-Navy text-xs lg:text-sm font-semibold">Property Taxes / Year</label>
                     <div className="flex items-stretch bg-neutral-50 rounded-xl overflow-hidden border border-neutral-200 focus-within:border-P2-Gold focus-within:ring-2 focus-within:ring-P2-Gold/20 transition-all h-12">
                       {propertyTaxType === 'dollar' && <span className="pl-4 pr-1 flex items-center text-P2-Gold font-bold text-base select-none">$</span>}
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         value={propertyTax}
                         onChange={(e) => handleCommaChange(e.target.value, setPropertyTax)}
                         className="w-full h-full bg-transparent px-3 text-P1-Navy font-mono font-bold outline-none text-base"
                       />
                       <div className="flex border-l border-neutral-200">
-                        <button 
+                        <button
                           onClick={() => setPropertyTaxType('dollar')}
                           className={`px-3.5 h-full text-xs font-bold transition-all border-r border-neutral-200 cursor-pointer ${propertyTaxType === 'dollar' ? 'bg-P2-Gold text-white' : 'bg-neutral-100 text-neutral-500 hover:bg-neutral-200'}`}
                         >
                           $
                         </button>
-                        <button 
+                        <button
                           onClick={() => setPropertyTaxType('percent')}
                           className={`px-3.5 h-full text-xs font-bold transition-all cursor-pointer ${propertyTaxType === 'percent' ? 'bg-P2-Gold text-white' : 'bg-neutral-100 text-neutral-500 hover:bg-neutral-200'}`}
                         >
@@ -496,20 +494,20 @@ export default function MortgageCalculatorPage() {
                     <label className="text-P1-Navy text-xs lg:text-sm font-semibold">Home Insurance / Year</label>
                     <div className="flex items-stretch bg-neutral-50 rounded-xl overflow-hidden border border-neutral-200 focus-within:border-P2-Gold focus-within:ring-2 focus-within:ring-P2-Gold/20 transition-all h-12">
                       {insuranceType === 'dollar' && <span className="pl-4 pr-1 flex items-center text-P2-Gold font-bold text-base select-none">$</span>}
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         value={insurance}
                         onChange={(e) => handleCommaChange(e.target.value, setInsurance)}
                         className="w-full h-full bg-transparent px-3 text-P1-Navy font-mono font-bold outline-none text-base"
                       />
                       <div className="flex border-l border-neutral-200">
-                        <button 
+                        <button
                           onClick={() => setInsuranceType('dollar')}
                           className={`px-3.5 h-full text-xs font-bold transition-all border-r border-neutral-200 cursor-pointer ${insuranceType === 'dollar' ? 'bg-P2-Gold text-white' : 'bg-neutral-100 text-neutral-500 hover:bg-neutral-200'}`}
                         >
                           $
                         </button>
-                        <button 
+                        <button
                           onClick={() => setInsuranceType('percent')}
                           className={`px-3.5 h-full text-xs font-bold transition-all cursor-pointer ${insuranceType === 'percent' ? 'bg-P2-Gold text-white' : 'bg-neutral-100 text-neutral-500 hover:bg-neutral-200'}`}
                         >
@@ -527,20 +525,20 @@ export default function MortgageCalculatorPage() {
                     </label>
                     <div className="flex items-stretch bg-neutral-50 rounded-xl overflow-hidden border border-neutral-200 focus-within:border-P2-Gold focus-within:ring-2 focus-within:ring-P2-Gold/20 transition-all h-12">
                       {pmiType === 'dollar' && <span className="pl-4 pr-1 flex items-center text-P2-Gold font-bold text-base select-none">$</span>}
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         value={pmi}
                         onChange={(e) => handleCommaChange(e.target.value, setPmi)}
                         className="w-full h-full bg-transparent px-3 text-P1-Navy font-mono font-bold outline-none text-base"
                       />
                       <div className="flex border-l border-neutral-200">
-                        <button 
+                        <button
                           onClick={() => setPmiType('dollar')}
                           className={`px-3.5 h-full text-xs font-bold transition-all border-r border-neutral-200 cursor-pointer ${pmiType === 'dollar' ? 'bg-P2-Gold text-white' : 'bg-neutral-100 text-neutral-500 hover:bg-neutral-200'}`}
                         >
                           $
                         </button>
-                        <button 
+                        <button
                           onClick={() => setPmiType('percent')}
                           className={`px-3.5 h-full text-xs font-bold transition-all cursor-pointer ${pmiType === 'percent' ? 'bg-P2-Gold text-white' : 'bg-neutral-100 text-neutral-500 hover:bg-neutral-200'}`}
                         >
@@ -555,8 +553,8 @@ export default function MortgageCalculatorPage() {
                     <label className="text-P1-Navy text-xs lg:text-sm font-semibold">HOA Fees / Month</label>
                     <div className="flex items-center bg-neutral-50 rounded-xl overflow-hidden border border-neutral-200 focus-within:border-P2-Gold focus-within:ring-2 focus-within:ring-P2-Gold/20 transition-all h-12">
                       <span className="pl-4 pr-1 text-P2-Gold font-bold text-base select-none">$</span>
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         value={hoaFees}
                         onChange={(e) => handleCommaChange(e.target.value, setHoaFees)}
                         className="w-full h-full bg-transparent px-2 text-P1-Navy font-mono font-bold outline-none text-base"
@@ -567,7 +565,7 @@ export default function MortgageCalculatorPage() {
 
                 {/* Collapsible Panel for Extra Payments */}
                 <div className="flex flex-col border border-neutral-200 rounded-2xl overflow-hidden">
-                  <button 
+                  <button
                     type="button"
                     onClick={() => setIsExtraOpen(!isExtraOpen)}
                     className="flex justify-between items-center px-5 py-4 bg-neutral-50 hover:bg-neutral-100/80 transition-colors text-left cursor-pointer"
@@ -575,7 +573,7 @@ export default function MortgageCalculatorPage() {
                     <span className="text-P1-Navy text-xs lg:text-sm font-bold uppercase tracking-wider flex items-center gap-2">
                       ⚡ Add Extra Payments (Pay Off Faster)
                     </span>
-                    <svg 
+                    <svg
                       className={`w-5 h-5 text-P2-Gold transition-transform duration-300 ${isExtraOpen ? 'rotate-180' : ''}`}
                       fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"
                     >
@@ -590,8 +588,8 @@ export default function MortgageCalculatorPage() {
                         <label className="text-P1-Navy text-xs lg:text-sm font-semibold">Extra Monthly Payment</label>
                         <div className="flex items-center bg-neutral-50 rounded-xl overflow-hidden border border-neutral-200 focus-within:border-P2-Gold focus-within:ring-2 focus-within:ring-P2-Gold/20 transition-all h-12">
                           <span className="pl-4 pr-1 text-P2-Gold font-bold text-base select-none">$</span>
-                          <input 
-                            type="text" 
+                          <input
+                            type="text"
                             value={extraPayment}
                             onChange={(e) => handleCommaChange(e.target.value, setExtraPayment)}
                             className="w-full h-full bg-transparent px-2 text-P1-Navy font-mono font-bold outline-none text-base"
@@ -604,8 +602,8 @@ export default function MortgageCalculatorPage() {
                         <label className="text-P1-Navy text-xs lg:text-sm font-semibold">Extra Annual Payment</label>
                         <div className="flex items-center bg-neutral-50 rounded-xl overflow-hidden border border-neutral-200 focus-within:border-P2-Gold focus-within:ring-2 focus-within:ring-P2-Gold/20 transition-all h-12">
                           <span className="pl-4 pr-1 text-P2-Gold font-bold text-base select-none">$</span>
-                          <input 
-                            type="text" 
+                          <input
+                            type="text"
                             value={extraAnnual}
                             onChange={(e) => handleCommaChange(e.target.value, setExtraAnnual)}
                             className="w-full h-full bg-transparent px-2 text-P1-Navy font-mono font-bold outline-none text-base"
@@ -617,7 +615,7 @@ export default function MortgageCalculatorPage() {
                 </div>
 
                 {/* Calculate Trigger Button */}
-                <button 
+                <button
                   type="button"
                   onClick={() => {
                     runCalculation();
@@ -637,7 +635,7 @@ export default function MortgageCalculatorPage() {
 
             {/* RIGHT COLUMN: Results, Charts & Tables (lg:col-span-6) */}
             <div ref={resultsRef} className="lg:col-span-6 flex flex-col gap-6 print:col-span-12">
-              
+
               {results && (
                 <>
                   {/* Card 3: Payments Summary */}
@@ -653,7 +651,7 @@ export default function MortgageCalculatorPage() {
                         <span className="text-P1-Navy font-mono font-bold text-lg lg:text-xl truncate">{formatCurrency(results.periodPI)}</span>
                         <span className="text-[10px] lg:text-xs text-neutral-500 font-semibold uppercase tracking-wide mt-1">P&I Payment</span>
                       </div>
-                      
+
                       <div className="bg-neutral-50 rounded-2xl p-4 border border-neutral-100 flex flex-col text-center">
                         <span className="text-P1-Navy font-mono font-bold text-lg lg:text-xl truncate">
                           {formatCurrency(parseNumber(extraPayment) * (12 / parseInt(paymentFrequency)))}
@@ -704,11 +702,11 @@ export default function MortgageCalculatorPage() {
                         <div className="relative w-20 h-20 sm:w-28 sm:h-28">
                           <svg viewBox="0 0 100 100" className="-rotate-90 w-full h-full">
                             <circle cx="50" cy="50" r="40" className="stroke-neutral-100 fill-none" strokeWidth="10" />
-                            <circle 
-                              cx="50" cy="50" r="40" 
-                              className="stroke-amber-600 fill-none transition-all duration-700 ease-out" 
-                              strokeWidth="10" 
-                              strokeDasharray="251.2" 
+                            <circle
+                              cx="50" cy="50" r="40"
+                              className="stroke-amber-600 fill-none transition-all duration-700 ease-out"
+                              strokeWidth="10"
+                              strokeDasharray="251.2"
                               strokeDashoffset={getStrokeOffset(results.interestPercent)}
                               strokeLinecap="round"
                             />
@@ -726,11 +724,11 @@ export default function MortgageCalculatorPage() {
                         <div className="relative w-20 h-20 sm:w-28 sm:h-28">
                           <svg viewBox="0 0 100 100" className="-rotate-90 w-full h-full">
                             <circle cx="50" cy="50" r="40" className="stroke-neutral-100 fill-none" strokeWidth="10" />
-                            <circle 
-                              cx="50" cy="50" r="40" 
-                              className="stroke-P2-Gold fill-none transition-all duration-700 ease-out" 
-                              strokeWidth="10" 
-                              strokeDasharray="251.2" 
+                            <circle
+                              cx="50" cy="50" r="40"
+                              className="stroke-P2-Gold fill-none transition-all duration-700 ease-out"
+                              strokeWidth="10"
+                              strokeDasharray="251.2"
                               strokeDashoffset={getStrokeOffset(results.principalPercent)}
                               strokeLinecap="round"
                             />
@@ -748,11 +746,11 @@ export default function MortgageCalculatorPage() {
                         <div className="relative w-20 h-20 sm:w-28 sm:h-28">
                           <svg viewBox="0 0 100 100" className="-rotate-90 w-full h-full">
                             <circle cx="50" cy="50" r="40" className="stroke-neutral-100 fill-none" strokeWidth="10" />
-                            <circle 
-                              cx="50" cy="50" r="40" 
-                              className="stroke-rose-700 fill-none transition-all duration-700 ease-out" 
-                              strokeWidth="10" 
-                              strokeDasharray="251.2" 
+                            <circle
+                              cx="50" cy="50" r="40"
+                              className="stroke-rose-700 fill-none transition-all duration-700 ease-out"
+                              strokeWidth="10"
+                              strokeDasharray="251.2"
                               strokeDashoffset={getStrokeOffset(results.taxesPercent)}
                               strokeLinecap="round"
                             />
@@ -784,7 +782,7 @@ export default function MortgageCalculatorPage() {
 
                     {/* Print & Share actions */}
                     <div className="flex gap-4 border-t border-neutral-100 pt-5 print:hidden">
-                      <button 
+                      <button
                         type="button"
                         onClick={handlePrint}
                         className="flex-1 h-11 border border-P1-Navy/25 hover:border-P1-Navy text-P1-Navy font-bold rounded-xl flex items-center justify-center gap-2 text-xs transition-colors cursor-pointer active:scale-95"
@@ -794,7 +792,7 @@ export default function MortgageCalculatorPage() {
                         </svg>
                         PRINT SCHEDULE
                       </button>
-                      <button 
+                      <button
                         type="button"
                         onClick={handleShare}
                         className="flex-1 h-11 border border-P1-Navy/25 hover:border-P1-Navy text-P1-Navy font-bold rounded-xl flex items-center justify-center gap-2 text-xs transition-colors cursor-pointer active:scale-95 relative"
@@ -820,7 +818,7 @@ export default function MortgageCalculatorPage() {
                       <h3 className="text-P1-Navy text-lg lg:text-xl font-bold uppercase tracking-wider">
                         Amortization Schedule
                       </h3>
-                      <button 
+                      <button
                         type="button"
                         onClick={handleCSVExport}
                         className="px-4 py-2 bg-P1-Navy hover:bg-neutral-800 text-white text-xs font-bold rounded-lg transition-colors cursor-pointer print:hidden active:scale-95"
@@ -847,7 +845,7 @@ export default function MortgageCalculatorPage() {
                           {results.schedule.map((row) => {
                             const isYearRow = row.num % parseInt(paymentFrequency) === 0;
                             return (
-                              <tr 
+                              <tr
                                 key={row.num}
                                 className={`hover:bg-neutral-50 transition-colors ${isYearRow ? 'bg-P2-Gold/5 font-semibold text-P1-Navy' : 'text-neutral-700'}`}
                               >
