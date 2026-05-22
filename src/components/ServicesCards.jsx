@@ -26,7 +26,7 @@ const ServicesCards = ({ className }) => {
           <div className="w-16 h-16 lg:w-24 lg:h-24 relative flex justify-center items-center">
             {card.icon}
           </div>
-          <div className="self-stretch text-center text-P1-Navy text-2xl lg:text-3xl font-semibold font-inter leading-9 lg:leading-[48px]">
+          <div className="self-stretch text-center text-P2-Gold text-2xl lg:text-3xl font-semibold font-inter leading-9 lg:leading-[48px]">
             {card.title}
           </div>
           <div className="w-full max-w-[320px] lg:max-w-none text-center text-P1-Navy text-[10px] lg:text-base font-normal font-inter leading-4 lg:leading-6 opacity-80">

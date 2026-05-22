@@ -50,7 +50,7 @@ const FullSuiteCards = () => {
   return (
     <section className="w-full px-6 lg:px-10 bg-white flex justify-center items-center">
       <div className="w-full max-w-[1360px] mx-auto flex flex-col justify-start items-center gap-5 lg:gap-16">
-        
+
         <div className="flex flex-col justify-start items-center gap-2.5 lg:gap-4 text-center">
           <div className="text-P2-Gold text-[10px] lg:text-xl font-semibold font-inter uppercase tracking-[0.1em] leading-4 lg:leading-normal">
             FULL SUITE OF
@@ -67,16 +67,16 @@ const FullSuiteCards = () => {
               <div className="size-16 lg:size-20 flex justify-center items-center mb-0 lg:mb-2">
                 {card.icon}
               </div>
-              
-              <div className="text-center text-P1-Navy text-2xl lg:text-3xl font-semibold font-inter leading-9 lg:leading-10">
+
+              <div className="text-center text-P2-Gold text-2xl lg:text-3xl font-semibold font-inter leading-9 lg:leading-10">
                 {card.title}
               </div>
-              
+
               <div className="flex flex-col items-center gap-3 lg:gap-6 flex-grow justify-between mt-2 lg:mt-0">
                 <div className="text-center text-P1-Navy text-[10px] lg:text-base font-normal font-inter leading-4 lg:leading-6 opacity-80 h-auto lg:h-[72px]">
                   {card.description}
                 </div>
-                
+
                 <div className="px-4 py-1.5 lg:px-6 lg:py-2 bg-slate-400/30 rounded-full inline-flex justify-center items-center mt-2 lg:mt-0">
                   <div className="text-center text-P1-Navy text-[10px] lg:text-sm font-medium font-inter">
                     {card.tag}

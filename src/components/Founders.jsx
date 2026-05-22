@@ -22,7 +22,7 @@ const Founders = ({ titleStart = "Your Future. ", titleGold = "Our Commitment.",
   return (
     <section className="w-full px-6 lg:px-10">
       <div className="w-full max-w-[1360px] mx-auto flex flex-col justify-start items-center gap-6 lg:gap-14">
-        
+
         {/* Heading */}
         <div className="w-full max-w-[1060px] text-center">
           <span className="text-Secondary-Deep-Navy text-2xl lg:text-5xl font-bold font-poppins">{titleStart}</span>
@@ -39,20 +39,20 @@ const Founders = ({ titleStart = "Your Future. ", titleGold = "Our Commitment.",
         {/* Founders Grid */}
         <div className="w-full flex flex-col lg:flex-row justify-center items-center gap-5 lg:gap-10">
           {founders.map((founder, index) => (
-            <a 
-              key={index} 
+            <a
+              key={index}
               href={founder.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full   h-[380px] lg:h-[473px] py-6 lg:py-10 flex flex-col justify-end items-center relative cursor-pointer hover:opacity-90 transition-opacity duration-300"
             >
-              <img 
-                className="w-full h-full rounded-3xl object-cover absolute top-0 left-0" 
-                src={founder.image} 
-                alt={founder.name} 
+              <img
+                className="w-full h-full rounded-3xl object-cover absolute top-0 left-0"
+                src={founder.image}
+                alt={founder.name}
               />
-              <div className="w-[80%] lg:w-[90%] h-16 lg:h-20 px-7 bg-neutral-300 rounded-3xl flex flex-col justify-center items-start relative z-10">
-                <div className="text-P1-Navy text-2xl lg:text-3xl font-semibold font-poppins leading-tight">
+              <div className="w-[80%] lg:w-[90%] h-16 lg:h-20 px-7 bg-neutral-300 rounded-3xl flex flex-col justify-center items-center relative z-10">
+                <div className="text-P1-Navy text-center text-2xl lg:text-3xl font-semibold font-poppins leading-tight">
                   {founder.name}
                 </div>
               </div>
