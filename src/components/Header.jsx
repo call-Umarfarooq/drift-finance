@@ -48,6 +48,7 @@ const Header = ({ darkMode = false }) => {
           <Link href={"/finanace-education"} className={`cursor-pointer ${textColor} text-base font-normal font-inter hover:text-P2-Gold transition-colors`}>Educational</Link>
           <Link href={"/testimonials"} className={`cursor-pointer ${textColor} text-base font-normal font-inter hover:text-P2-Gold transition-colors`}>Testimonials</Link>
           <Link href={"/achievements"} className={`cursor-pointer ${textColor} text-base font-normal font-inter hover:text-P2-Gold transition-colors`}>Achievements</Link>
+          <Link href={"/mortgage-calculator"} className={`cursor-pointer ${textColor} text-base font-normal font-inter hover:text-P2-Gold transition-colors`}>Calculator</Link>
           <Link href={"/carears"} className={`cursor-pointer ${textColor} text-base font-normal font-inter hover:text-P2-Gold transition-colors`}>Careers</Link>
         </nav>
         <Link href={"/contact"} className="px-6 py-2.5 bg-P2-Gold rounded-[100px] flex justify-center items-center gap-2 hover:opacity-90 transition-opacity group">
@@ -76,6 +77,7 @@ const Header = ({ darkMode = false }) => {
           <Link href={"/finanace-education"} onClick={() => setIsMobileMenuOpen(false)} className="text-P1-Navy text-base font-semibold font-inter py-2 border-b border-neutral-100">Educational</Link>
           <Link href={"/testimonials"} onClick={() => setIsMobileMenuOpen(false)} className="text-P1-Navy text-base font-semibold font-inter py-2 border-b border-neutral-100">Testimonials</Link>
           <Link href={"/achievements"} onClick={() => setIsMobileMenuOpen(false)} className="text-P1-Navy text-base font-semibold font-inter py-2 border-b border-neutral-100">Achievements</Link>
+          <Link href={"/mortgage-calculator"} onClick={() => setIsMobileMenuOpen(false)} className="text-P1-Navy text-base font-semibold font-inter py-2 border-b border-neutral-100">Calculator</Link>
           <Link href={"/carears"} onClick={() => setIsMobileMenuOpen(false)} className="text-P1-Navy text-base font-semibold font-inter py-2 border-b border-neutral-100">Careers</Link>
           
           <Link href={"/contact"} onClick={() => setIsMobileMenuOpen(false)} className="w-full mt-4 px-6 py-3 bg-P2-Gold rounded-[100px] flex justify-center items-center gap-2 group">

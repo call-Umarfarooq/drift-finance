@@ -1,5 +1,7 @@
+'use client';
 import React from 'react';
 import Link from 'next/link';
+import { triggerEmail } from '@/utils/emailHelper';
 
 const Footer = () => {
   return (
@@ -26,12 +28,13 @@ const Footer = () => {
             <div className="flex flex-col gap-3 lg:gap-4">
               <div className="h-0 lg:h-6 hidden lg:block"></div>
               <div className="flex flex-col gap-3">
-                <a href="/about-us" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">About Us</a>
-                <a href="/finance-services" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Services</a>
-                <a href="/finanace-education" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Educational</a>
-                <a href="/testimonials" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Testimonials</a>
-                <a href="/achievements" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Achievements</a>
-                <a href="#/carears" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Careers</a>
+                <Link href="/about-us" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">About Us</Link>
+                <Link href="/finance-services" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Services</Link>
+                <Link href="/finanace-education" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Educational</Link>
+                <Link href="/testimonials" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Testimonials</Link>
+                <Link href="/achievements" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Achievements</Link>
+                <Link href="/mortgage-calculator" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Mortgage Calculator</Link>
+                <Link href="/carears" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Careers</Link>
               </div>
             </div>
 
@@ -39,12 +42,12 @@ const Footer = () => {
             <div className="flex flex-col gap-3 lg:gap-4">
               <h4 className="text-white text-sm font-bold font-inter leading-4 lg:text-lg lg:leading-6">Loan Programs</h4>
               <div className="flex flex-col gap-3">
-                <a href="/conventional-loan" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Conventional Loans</a>
-                <a href="/fha-loans" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">FHA Loans</a>
-                <a href="/va-loans" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">VA Loans</a>
-                <a href="/heloc" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">HELOC</a>
-                <a href="/dscr-loans" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">DSCR Loans</a>
-                <a href="/non-qm-loans" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Non-QM Loans</a>
+                <Link href="/conventional-loan" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Conventional Loans</Link>
+                <Link href="/fha-loans" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">FHA Loans</Link>
+                <Link href="/va-loans" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">VA Loans</Link>
+                <Link href="/heloc" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">HELOC</Link>
+                <Link href="/dscr-loans" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">DSCR Loans</Link>
+                <Link href="/non-qm-loans" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Non-QM Loans</Link>
               </div>
             </div>
 
@@ -53,7 +56,7 @@ const Footer = () => {
               <h4 className="text-white text-sm font-bold font-inter leading-4 lg:text-lg lg:leading-6">Contact Us:</h4>
               <div className="flex flex-col gap-3">
                 <a href="tel:888-338-5504" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">888-338-5504</a>
-                <a href="mailto:Drift@driftfinancial.com" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Drift@driftfinancial.com</a>
+                <a href="mailto:Drift@driftfinancial.com" onClick={triggerEmail} className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Drift@driftfinancial.com</a>
                 <address className="text-white text-[10px] lg:text-sm font-normal font-inter not-italic max-w-[120px] lg:max-w-[200px] leading-4">
                   209 west sixth street, Royal Oak MI, 48067
                 </address>

@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortgage Calculator | Automate with Muzammil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8B5A2B;
+            --primary-dark: #6B4423;
+            --primary-light: #D4A574;
+            --primary-lighter: #F5E6D3;
+            --secondary: #A67C52;
+            --accent: #C9A227;
+            --accent-dark: #B8922a;
+            --text-dark: #3D2314;
+            --text-muted: #7A6B63;
+            --text-light: #A69489;
+            --bg-light: #FAF6F1;
+            --bg-white: #ffffff;
+            --bg-cream: #FDF8F3;
+            --border: #E8DDD4;
+            --border-dark: #D4C4B5;
+            --success: #6B8E23;
+            --warning: #D4A017;
+            --danger: #B54834;
+            --purple: #8B6914;
+            --pink: #C47D5E;
+            --orange: #D4883A;
+            --shadow: 0 4px 6px -1px rgba(61, 35, 20, 0.1), 0 2px 4px -1px rgba(61, 35, 20, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(61, 35, 20, 0.1), 0 4px 6px -2px rgba(61, 35, 20, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(180deg, #FAF6F1 0%, #F5EDE3 100%);
+            color: var(--text-dark);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .calculator-card {
+            background: var(--bg-white);
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+        }
+
+        .section {
+            padding: 28px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .field {
+            margin-bottom: 0;
+        }
+
+        .field label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .info-icon {
+            width: 16px;
+            height: 16px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            cursor: help;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: stretch;
+            background: var(--bg-light);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid var(--border);
+            transition: all 0.2s ease;
+        }
+
+        .input-group:focus-within {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(139, 90, 43, 0.15);
+        }
+
+        .input-group input {
+            flex: 1;
+            border: none;
+            background: transparent;
+            padding: 12px 14px;
+            font-size: 1rem;
+            font-family: 'Space Mono', monospace;
+            color: var(--text-dark);
+            outline: none;
+        }
+
+        .input-group .prefix {
+            padding: 12px 0 12px 14px;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .toggle-buttons {
+            display: flex;
+            background: var(--bg-light);
+        }
+
+        .toggle-btn {
+            padding: 12px 16px;
+            border: none;
+            background: var(--text-light);
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.85rem;
+        }
+
+        .toggle-btn:first-child {
+            border-radius: 0;
+        }
+
+        .toggle-btn:last-child {
+            border-radius: 0;
+        }
+
+        .toggle-btn.active {
+            background: var(--primary);
+        }
+
+        .toggle-btn:hover:not(.active) {
+            background: var(--secondary);
+        }
+
+        select {
+            width: 100%;
+            padding: 12px 14px;
+            background: var(--bg-light);
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            color: var(--text-dark);
+            cursor: pointer;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        select:focus {
+            border-color: var(--primary);
+        }
+
+        .calculate-btn {
+            width: 100%;
+            padding: 16px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+
+        .calculate-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        /* Collapsible Section */
+        .collapsible-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 15px;
+            background: transparent;
+            border: 2px dashed var(--border-dark);
+            border-radius: 8px;
+            color: var(--text-muted);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-top: 20px;
+        }
+
+        .collapsible-header:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: var(--primary-lighter);
+        }
+
+        .collapsible-header .arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .collapsible-header.open .arrow {
+            transform: rotate(180deg);
+        }
+
+        .collapsible-content {
+            display: none;
+            padding-top: 20px;
+        }
+
+        .collapsible-content.open {
+            display: block;
+        }
+
+        /* Results Section */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        @media (max-width: 700px) {
+            .results-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 450px) {
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .result-item {
+            background: var(--bg-cream);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+
+        .result-item .value {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .result-item .label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .total-payment {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .total-payment .label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+
+        .total-payment .value {
+            font-family: 'Space Mono', monospace;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        /* Donut Charts */
+        .charts-section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 700px) {
+            .charts-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .donut-chart-container {
+            text-align: center;
+        }
+
+        .donut-chart {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 15px;
+        }
+
+        .donut-chart svg {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+
+        .donut-chart circle {
+            fill: none;
+            stroke-width: 12;
+        }
+
+        .donut-chart .bg {
+            stroke: var(--border);
+        }
+
+        .donut-chart .progress {
+            stroke-linecap: round;
+            transition: stroke-dashoffset 0.5s ease;
+        }
+
+        .donut-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .donut-center .percent {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .donut-center .percent sup {
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .donut-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 5px;
+        }
+
+        .donut-value {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        /* Payment Schedule Chart */
+        .chart-container {
+            margin-top: 30px;
+            padding: 20px;
+            background: var(--bg-cream);
+            border-radius: 12px;
+        }
+
+        .chart-title {
+            text-align: center;
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .chart-wrapper {
+            height: 250px;
+            position: relative;
+        }
+
+        .chart-legend {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .legend-dot.interest { background: #C47D5E; }
+        .legend-dot.principal { background: #8B5A2B; }
+        .legend-dot.taxes { background: #D4883A; }
+        .legend-dot.extra { background: #C9A227; }
+        .legend-dot.balance { background: var(--text-dark); }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid var(--border);
+        }
+
+        .action-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border: 2px solid var(--primary);
+            background: transparent;
+            color: var(--primary);
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .action-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .action-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Amortization Table */
+        .table-section {
+            margin-top: 25px;
+        }
+
+        .table-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .table-header h3 {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+        }
+
+        .export-btn {
+            padding: 8px 16px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .export-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        .table-wrapper {
+            max-height: 350px;
+            overflow-y: auto;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+        }
+
+        thead {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        th {
+            background: var(--primary);
+            color: white;
+            padding: 12px 10px;
+            text-align: right;
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+
+        th:first-child { text-align: center; }
+
+        td {
+            padding: 10px;
+            text-align: right;
+            border-bottom: 1px solid var(--border);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+        }
+
+        td:first-child {
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        tr:hover td {
+            background: var(--primary-lighter);
+        }
+
+        tr.year-row td {
+            background: var(--primary-lighter);
+            font-weight: 600;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        @media print {
+            .calculate-btn, .action-buttons, .export-btn, .collapsible-header {
+                display: none !important;
+            }
+            .calculator-card {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Mortgage Calculator</h1>
+            <p>Calculate your monthly payments and see your complete amortization schedule</p>
+        </header>
+
+        <div class="calculator-card">
+            <!-- Mortgage Details -->
+            <div class="section">
+                <h2 class="section-title">Mortgage Details</h2>
+                
+                <div class="form-grid">
+                    <div class="field">
+                        <label>Property Value</label>
+                        <div class="input-group">
+                            <span class="prefix">$</span>
+                            <input type="text" id="propertyValue" value="300,000" inputmode="numeric">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label>Down Payment</label>
+                        <div class="input-group">
+                            <input type="text" id="downPayment" value="20" inputmode="numeric">
+                            <div class="toggle-buttons">
+                                <button class="toggle-btn" data-type="dollar" data-target="downPayment">$</button>
+                                <button class="toggle-btn active" data-type="percent" data-target="downPayment">%</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label>Mortgage Amount</label>
+                        <div class="input-group">
+                            <span class="prefix">$</span>
+                            <input type="text" id="loanAmount" value="240,000" inputmode="numeric" readonly style="background: #f0f4f4;">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label>Interest Rate</label>
+                        <div class="input-group">
+                            <input type="text" id="interestRate" value="5" inputmode="decimal">
+                            <div class="toggle-buttons">
+                                <button class="toggle-btn active" data-type="percent" data-target="interestRate">%</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label>Amortization Period</label>
+                        <div class="input-group">
+                            <input type="number" id="termYears" value="30" min="1" max="50">
+                            <div class="toggle-buttons">
+                                <button class="toggle-btn active" data-type="years" data-target="term">Yr</button>
+                                <button class="toggle-btn" data-type="months" data-target="term">Mo</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label>Payment Frequency</label>
+                        <select id="paymentFrequency">
+                            <option value="12" selected>Monthly</option>
+                            <option value="26">Bi-Weekly</option>
+                            <option value="52">Weekly</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Homeowner Expenses -->
+            <div class="section">
+                <h2 class="section-title">Homeowner Expenses</h2>
+                
+                <div class="form-grid">
+                    <div class="field">
+                        <label>Property Taxes / Year</label>
+                        <div class="input-group">
+                            <input type="text" id="propertyTax" value="1" inputmode="decimal">
+                            <div class="toggle-buttons">
+                                <button class="toggle-btn" data-type="dollar" data-target="propertyTax">$</button>
+                                <button class="toggle-btn active" data-type="percent" data-target="propertyTax">%</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label>Home Insurance / Year</label>
+                        <div class="input-group">
+                            <input type="text" id="insurance" value="0.15" inputmode="decimal">
+                            <div class="toggle-buttons">
+                                <button class="toggle-btn" data-type="dollar" data-target="insurance">$</button>
+                                <button class="toggle-btn active" data-type="percent" data-target="insurance">%</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label>PMI / Year <span class="info-icon" title="Private Mortgage Insurance - typically required if down payment < 20%">?</span></label>
+                        <div class="input-group">
+                            <input type="text" id="pmi" value="0" inputmode="decimal">
+                            <div class="toggle-buttons">
+                                <button class="toggle-btn" data-type="dollar" data-target="pmi">$</button>
+                                <button class="toggle-btn active" data-type="percent" data-target="pmi">%</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label>HOA Fees / Month</label>
+                        <div class="input-group">
+                            <span class="prefix">$</span>
+                            <input type="text" id="hoaFees" value="0" inputmode="numeric">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Extra Payments Collapsible -->
+                <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                    <span>ADD EXTRA PAYMENTS</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="form-grid">
+                        <div class="field">
+                            <label>Extra Monthly Payment</label>
+                            <div class="input-group">
+                                <span class="prefix">$</span>
+                                <input type="text" id="extraPayment" value="0" inputmode="numeric">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Extra Annual Payment</label>
+                            <div class="input-group">
+                                <span class="prefix">$</span>
+                                <input type="text" id="extraAnnual" value="0" inputmode="numeric">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="calculate-btn" onclick="calculate()">Calculate Mortgage</button>
+            </div>
+
+            <!-- Results -->
+            <div class="section" id="resultsSection">
+                <div class="results-grid">
+                    <div class="result-item">
+                        <div class="value" id="monthlyPI">$1,288.37</div>
+                        <div class="label">Monthly Principal & Interest</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="value" id="monthlyExtra">$0.00</div>
+                        <div class="label">Monthly Extra Payment</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="value" id="monthlyTax">$250.00</div>
+                        <div class="label">Property Taxes</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="value" id="monthlyInsurance">$37.50</div>
+                        <div class="label">Homeowner's Insurance</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="value" id="monthlyPMI">$0.00</div>
+                        <div class="label">Private Mortgage Insurance</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="value" id="monthlyHOA">$0.00</div>
+                        <div class="label">HOA Fees</div>
+                    </div>
+                </div>
+
+                <div class="total-payment">
+                    <div class="label">Total Monthly Payment</div>
+                    <div class="value" id="totalMonthly">$1,575.87</div>
+                </div>
+
+                <!-- Donut Charts -->
+                <div class="charts-section">
+                    <div class="donut-chart-container">
+                        <div class="donut-chart">
+                            <svg viewBox="0 0 100 100">
+                                <circle class="bg" cx="50" cy="50" r="40"/>
+                                <circle class="progress" id="interestCircle" cx="50" cy="50" r="40" stroke="#C47D5E" stroke-dasharray="251.2" stroke-dashoffset="163"/>
+                            </svg>
+                            <div class="donut-center">
+                                <div class="percent" id="interestPercent">35<sup>%</sup></div>
+                            </div>
+                        </div>
+                        <div class="donut-value" id="totalInterestValue">$223,813.88</div>
+                        <div class="donut-label">Interest</div>
+                    </div>
+
+                    <div class="donut-chart-container">
+                        <div class="donut-chart">
+                            <svg viewBox="0 0 100 100">
+                                <circle class="bg" cx="50" cy="50" r="40"/>
+                                <circle class="progress" id="principalCircle" cx="50" cy="50" r="40" stroke="#8B5A2B" stroke-dasharray="251.2" stroke-dashoffset="158"/>
+                            </svg>
+                            <div class="donut-center">
+                                <div class="percent" id="principalPercent">37<sup>%</sup></div>
+                            </div>
+                        </div>
+                        <div class="donut-value" id="totalPrincipalValue">$240,000.00</div>
+                        <div class="donut-label">Principal</div>
+                    </div>
+
+                    <div class="donut-chart-container">
+                        <div class="donut-chart">
+                            <svg viewBox="0 0 100 100">
+                                <circle class="bg" cx="50" cy="50" r="40"/>
+                                <circle class="progress" id="taxesCircle" cx="50" cy="50" r="40" stroke="#D4883A" stroke-dasharray="251.2" stroke-dashoffset="211"/>
+                            </svg>
+                            <div class="donut-center">
+                                <div class="percent" id="taxesPercent">16<sup>%</sup></div>
+                            </div>
+                        </div>
+                        <div class="donut-value" id="totalTaxesValue">$103,500.00</div>
+                        <div class="donut-label">Taxes, Insurance & Fees</div>
+                    </div>
+                </div>
+
+                <!-- Net Effective Rate -->
+                <div class="results-grid" style="margin-top: 25px;">
+                    <div class="result-item">
+                        <div class="value" id="yearsPayoff">30.00 yrs</div>
+                        <div class="label">Time to Payoff</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="value" id="interestSavings">$0.00</div>
+                        <div class="label">Interest Savings</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="value" id="netEffectiveRate">5.00%</div>
+                        <div class="label">Net Effective Rate</div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button class="action-btn" onclick="window.print()">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+                        PRINT
+                    </button>
+                    <button class="action-btn" onclick="shareCalculator()">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
+                        SHARE
+                    </button>
+                </div>
+
+                <!-- Amortization Table -->
+                <div class="table-section">
+                    <div class="table-header">
+                        <h3>Amortization Schedule</h3>
+                        <button class="export-btn" onclick="exportToCSV()">Export CSV</button>
+                    </div>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Date</th>
+                                    <th>Payment</th>
+                                    <th>Principal</th>
+                                    <th>Interest</th>
+                                    <th>Extra</th>
+                                    <th>Balance</th>
+                                </tr>
+                            </thead>
+                            <tbody id="amortizationBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                Built by <a href="https://www.automatewithmuzammil.com" target="_blank">Automate with Muzammil</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Format functions
+        function formatCurrency(num) {
+            return '$' + num.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
+        function formatWithCommas(num) {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        }
+
+        function parseNumber(str) {
+            return parseFloat(String(str).replace(/,/g, '')) || 0;
+        }
+
+        function formatDate(date) {
+            return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
+        }
+
+        // Toggle state tracking
+        const toggleStates = {
+            downPayment: 'percent',
+            propertyTax: 'percent',
+            insurance: 'percent',
+            pmi: 'percent',
+            term: 'years'
+        };
+
+        // Initialize toggle buttons
+        document.querySelectorAll('.toggle-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const target = this.dataset.target;
+                const type = this.dataset.type;
+                const parent = this.parentElement;
+                
+                parent.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                toggleStates[target] = type;
+                updateLoanAmount();
+            });
+        });
+
+        // Format input with commas
+        function setupCommaInput(id) {
+            const input = document.getElementById(id);
+            input.addEventListener('input', function() {
+                let value = this.value.replace(/[^\d.]/g, '');
+                const parts = value.split('.');
+                if (parts[0]) {
+                    parts[0] = formatWithCommas(parts[0].replace(/,/g, ''));
+                }
+                this.value = parts.join('.');
+            });
+            input.addEventListener('blur', updateLoanAmount);
+        }
+
+        setupCommaInput('propertyValue');
+        setupCommaInput('downPayment');
+        setupCommaInput('extraPayment');
+        setupCommaInput('extraAnnual');
+        setupCommaInput('hoaFees');
+
+        // Update loan amount based on property value and down payment
+        function updateLoanAmount() {
+            const propertyValue = parseNumber(document.getElementById('propertyValue').value);
+            const downPaymentInput = parseNumber(document.getElementById('downPayment').value);
+            
+            let downPayment;
+            if (toggleStates.downPayment === 'percent') {
+                downPayment = propertyValue * (downPaymentInput / 100);
+            } else {
+                downPayment = downPaymentInput;
+            }
+            
+            const loanAmount = propertyValue - downPayment;
+            document.getElementById('loanAmount').value = formatWithCommas(Math.round(loanAmount));
+        }
+
+        document.getElementById('propertyValue').addEventListener('input', updateLoanAmount);
+        document.getElementById('downPayment').addEventListener('input', updateLoanAmount);
+
+        // Collapsible toggle
+        function toggleCollapsible(header) {
+            header.classList.toggle('open');
+            header.nextElementSibling.classList.toggle('open');
+        }
+
+        // Calculate payment
+        function calcPayment(principal, annualRate, totalPayments) {
+            if (annualRate === 0) return principal / totalPayments;
+            const monthlyRate = annualRate / 100 / 12;
+            return principal * (monthlyRate * Math.pow(1 + monthlyRate, totalPayments)) / (Math.pow(1 + monthlyRate, totalPayments) - 1);
+        }
+
+        // Calculate NPER
+        function calcNPER(annualRate, payment, principal) {
+            if (annualRate === 0) return principal / payment;
+            const monthlyRate = annualRate / 100 / 12;
+            return Math.log(payment / (payment - principal * monthlyRate)) / Math.log(1 + monthlyRate);
+        }
+
+        // Calculate effective rate
+        function calcEffectiveRate(principal, totalInterest, payments) {
+            if (payments <= 0 || principal <= 0) return 0;
+            const totalPaid = principal + totalInterest;
+            const avgPayment = totalPaid / payments;
+            
+            let rate = 0.05 / 12;
+            for (let i = 0; i < 100; i++) {
+                const factor = Math.pow(1 + rate, payments);
+                const f = principal * rate * factor / (factor - 1) - avgPayment;
+                const df = principal * (factor * (factor - 1) - rate * payments * Math.pow(1 + rate, payments - 1) * (factor - 1) + rate * factor * payments * Math.pow(1 + rate, payments - 1)) / Math.pow(factor - 1, 2);
+                if (Math.abs(df) < 0.0000001) break;
+                rate = Math.max(0.0000001, rate - f / df);
+            }
+            return rate * 12 * 100;
+        }
+
+        // Update donut chart
+        function updateDonut(circleId, percentId, percent) {
+            const circumference = 251.2;
+            const offset = circumference - (percent / 100 * circumference);
+            document.getElementById(circleId).style.strokeDashoffset = offset;
+            document.getElementById(percentId).innerHTML = Math.round(percent) + '<sup>%</sup>';
+        }
+
+        // Main calculate function
+        function calculate() {
+            const propertyValue = parseNumber(document.getElementById('propertyValue').value);
+            const loanAmount = parseNumber(document.getElementById('loanAmount').value);
+            const annualRate = parseFloat(document.getElementById('interestRate').value) || 0;
+            const termValue = parseFloat(document.getElementById('termYears').value) || 30;
+            const termMonths = toggleStates.term === 'years' ? termValue * 12 : termValue;
+            
+            // Property costs
+            const propertyTaxInput = parseFloat(document.getElementById('propertyTax').value) || 0;
+            const insuranceInput = parseFloat(document.getElementById('insurance').value) || 0;
+            const pmiInput = parseFloat(document.getElementById('pmi').value) || 0;
+            const hoaFees = parseNumber(document.getElementById('hoaFees').value);
+            
+            // Calculate monthly costs
+            const monthlyTax = toggleStates.propertyTax === 'percent' 
+                ? propertyValue * (propertyTaxInput / 100) / 12 
+                : propertyTaxInput / 12;
+            const monthlyInsurance = toggleStates.insurance === 'percent'
+                ? propertyValue * (insuranceInput / 100) / 12
+                : insuranceInput / 12;
+            const monthlyPMI = toggleStates.pmi === 'percent'
+                ? loanAmount * (pmiInput / 100) / 12
+                : pmiInput / 12;
+            
+            // Extra payments
+            const extraPayment = parseNumber(document.getElementById('extraPayment').value);
+            const extraAnnual = parseNumber(document.getElementById('extraAnnual').value);
+            
+            // Calculate P&I
+            const monthlyPI = calcPayment(loanAmount, annualRate, termMonths);
+            
+            // Update result cards
+            document.getElementById('monthlyPI').textContent = formatCurrency(monthlyPI);
+            document.getElementById('monthlyExtra').textContent = formatCurrency(extraPayment);
+            document.getElementById('monthlyTax').textContent = formatCurrency(monthlyTax);
+            document.getElementById('monthlyInsurance').textContent = formatCurrency(monthlyInsurance);
+            document.getElementById('monthlyPMI').textContent = formatCurrency(monthlyPMI);
+            document.getElementById('monthlyHOA').textContent = formatCurrency(hoaFees);
+            
+            const totalMonthly = monthlyPI + extraPayment + monthlyTax + monthlyInsurance + monthlyPMI + hoaFees;
+            document.getElementById('totalMonthly').textContent = formatCurrency(totalMonthly);
+            
+            // Generate amortization schedule
+            let balance = loanAmount;
+            let totalInterest = 0;
+            let totalTaxesInsurance = 0;
+            let paymentNum = 0;
+            const schedule = [];
+            const currentDate = new Date();
+            currentDate.setMonth(currentDate.getMonth() + 1);
+            
+            while (balance > 0.01 && paymentNum < termMonths * 2) {
+                paymentNum++;
+                const monthlyRate = annualRate / 100 / 12;
+                const interest = balance * monthlyRate;
+                let principal = monthlyPI - interest;
+                
+                let extra = extraPayment;
+                if (paymentNum % 12 === 0) extra += extraAnnual;
+                
+                if (principal + extra > balance) {
+                    principal = balance;
+                    extra = 0;
+                }
+                
+                balance -= (principal + extra);
+                if (balance < 0) balance = 0;
+                
+                totalInterest += interest;
+                totalTaxesInsurance += monthlyTax + monthlyInsurance + monthlyPMI + hoaFees;
+                
+                const paymentDate = new Date(currentDate);
+                paymentDate.setMonth(paymentDate.getMonth() + paymentNum - 1);
+                
+                schedule.push({
+                    num: paymentNum,
+                    date: paymentDate,
+                    payment: monthlyPI + extra,
+                    principal: principal,
+                    interest: interest,
+                    extra: extra,
+                    balance: balance
+                });
+            }
+            
+            // Calculate totals and percentages
+            const totalPaid = totalInterest + loanAmount + totalTaxesInsurance;
+            const interestPercent = (totalInterest / totalPaid) * 100;
+            const principalPercent = (loanAmount / totalPaid) * 100;
+            const taxesPercent = (totalTaxesInsurance / totalPaid) * 100;
+            
+            // Update donut charts
+            updateDonut('interestCircle', 'interestPercent', interestPercent);
+            updateDonut('principalCircle', 'principalPercent', principalPercent);
+            updateDonut('taxesCircle', 'taxesPercent', taxesPercent);
+            
+            document.getElementById('totalInterestValue').textContent = formatCurrency(totalInterest);
+            document.getElementById('totalPrincipalValue').textContent = formatCurrency(loanAmount);
+            document.getElementById('totalTaxesValue').textContent = formatCurrency(totalTaxesInsurance);
+            
+            // Calculate savings vs no extra payments
+            const noExtraPayments = termMonths;
+            const noExtraTotalInterest = (monthlyPI * termMonths) - loanAmount;
+            const interestSavings = noExtraTotalInterest - totalInterest;
+            
+            document.getElementById('yearsPayoff').textContent = (paymentNum / 12).toFixed(2) + ' yrs';
+            document.getElementById('interestSavings').textContent = formatCurrency(Math.max(0, interestSavings));
+            
+            // Net effective rate
+            const netEffRate = calcEffectiveRate(loanAmount, totalInterest, paymentNum);
+            document.getElementById('netEffectiveRate').textContent = netEffRate.toFixed(2) + '%';
+            
+            // Populate table
+            const tbody = document.getElementById('amortizationBody');
+            tbody.innerHTML = '';
+            
+            schedule.forEach(row => {
+                const tr = document.createElement('tr');
+                if (row.num % 12 === 0) tr.classList.add('year-row');
+                tr.innerHTML = `
+                    <td>${row.num}</td>
+                    <td>${formatDate(row.date)}</td>
+                    <td>${formatCurrency(row.payment)}</td>
+                    <td>${formatCurrency(row.principal)}</td>
+                    <td>${formatCurrency(row.interest)}</td>
+                    <td>${row.extra > 0 ? formatCurrency(row.extra) : '-'}</td>
+                    <td>${formatCurrency(row.balance)}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+            
+            window.amortizationSchedule = schedule;
+        }
+
+        // Export to CSV
+        function exportToCSV() {
+            if (!window.amortizationSchedule) return;
+            
+            const headers = ['#', 'Date', 'Payment', 'Principal', 'Interest', 'Extra', 'Balance'];
+            const rows = window.amortizationSchedule.map(r => [
+                r.num, formatDate(r.date), r.payment.toFixed(2), r.principal.toFixed(2),
+                r.interest.toFixed(2), r.extra.toFixed(2), r.balance.toFixed(2)
+            ]);
+            
+            const csv = [headers, ...rows].map(r => r.join(',')).join('\n');
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'amortization_schedule.csv';
+            a.click();
+        }
+
+        // Share calculator
+        function shareCalculator() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Mortgage Calculator',
+                    text: 'Check out this mortgage calculator!',
+                    url: window.location.href
+                });
+            } else {
+                navigator.clipboard.writeText(window.location.href);
+                alert('Link copied to clipboard!');
+            }
+        }
+
+        // Initial calculation
+        updateLoanAmount();
+        calculate();
+    </script>
+</body>
+</html>

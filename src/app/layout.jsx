@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+import FloatingEmailButton from "@/components/FloatingEmailButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,6 +36,7 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-full flex flex-col bg-white">
         {children}
+        <FloatingEmailButton />
       </body>
     </html>
   );

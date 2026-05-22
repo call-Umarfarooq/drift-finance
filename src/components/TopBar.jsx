@@ -1,4 +1,6 @@
+'use client';
 import React from 'react'
+import { triggerEmail } from '@/utils/emailHelper'
 
 const TopBar = () => {
   const tagLine = "MORE than a mortgage PARTNERS you can count on";
@@ -34,7 +36,7 @@ const TopBar = () => {
         {/* Desktop View: Three-Column Layout */}
         {/* Left Column: Email */}
         <div className="hidden lg:block w-1/4 text-white text-[14px] font-normal font-inter leading-[150%] shrink-0">
-          <a href="mailto:Drift@driftfinancial.com" className="hover:opacity-80 transition-opacity">
+          <a href="mailto:Drift@driftfinancial.com" onClick={triggerEmail} className="hover:opacity-80 transition-opacity">
             Drift@driftfinancial.com
           </a>
         </div>

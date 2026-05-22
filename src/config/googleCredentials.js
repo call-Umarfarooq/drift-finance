@@ -1,0 +1,11 @@
+/**
+ * Shared Google Service Account Credentials.
+ * Checked directly into the codebase to allow seamless deployment on any hosting platform.
+ * Stored as a single string with explicit escaped newlines (\n) to prevent Git from altering
+ * line endings on different operating systems (CRLF vs LF).
+ */
+export const googleCredentials = {
+  clientEmail: "drift-finance-bot@homeorganization-478111.iam.gserviceaccount.com",
+  privateKey: "-----BEGIN PRIVATE KEY-----\\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC1vsGwhdf7cl0z\\nXtoXnae8exv+mrRW9ZIe/hlOHlOKOnPYAq8YPZXYvr6+AFp02MXxK/qMf8PpNs5D\\nTzuGcBos7sKgfgUiYDNlSuw1W/1LZtRR/GEpVIbpIb6TXDYkxCVZZ+DAZtO7HMTF\\nfPcvvkneBRcIGjcc4eXk4pgcePXpS9H8XCd8TRkcZn8ZQ+lZ8JwqIHrkp9OlkYL1\\nASZLsCbrgNilfDznhR1n0+EqHIllvOQM9hdhuDQtMQshJ0UveaN9pf1XrPdnIu0V\\nb8l7gi4NDEV9d2I+55wfa1zZITiZdeRtX4tFz5gR3IPC86cDcQ9GrlJPwL5tFZ78\\nASxaptQHAgMBAAECggEAAeDcKkbihJFvWn3lzc4DUx9dRV8JSMd2SyZf0emI/ioR\\n0xm0ADwitarDAz5dsPd3PuwwGrj3UrcOSq529Fy+6IKkivltHtMqX3xMFKvEDRNy\\n/lCYGyU/Kl7+6TxQEvE0BvMxOiErRF53v31wez3W5ZndMxLnnuohcMwmu6SZu1+D\\ncVL0nexEIdLeym0aRKaMrvE68I4SIq/qNPcujHbcupIiNHoFrHZKd9ov9M1B8IQL\\ndF0/c0PC4xVWxbZDx8Ff945u1A18aNI4kPVa0cBEUozrnL2UVXb0XOibIv1BrdhG\\nlzrnmIJkB1YzP9kI4dkFM8Qs5pmZyQGRsvjOQ2tBgQKBgQDX9BFeZ4Zu8IgQrXNB\\nUYGDQ9sJ3mL5OTn4cUpbtFrtNDdIkH1TtxQAL8a/d26vRGV2gusW3LM16A06q4RG\\nh8tKKtkqRa04PcFzvRd42nlhUv2imKfAQQf8td7mjBTYWTexyUOXauQ176eZ+Ycq\\nn1UodvUEHEz4NrXxKK+/VrSy0wKBgQDXcrlsBlUBkgqLqdbx8/ep+TOYqiului5i\\nXufbWtTGRtXeNqx120o2HBZGXQ4TaamUsRWnogq7Ld+V24s/6ECYd7A05wuqotfg\\n9lvtL/5w9AtMmMUl4WsGxWcnVfh4Ro8qw8vEM96U4d5EObHA2E2lgZjNJuqOzUuB\\nx0jlXxaRfQKBgEA+ywAD2nmcs04K2/P9tIMBp+NatqUgQj/ILG/1yuswkpXS7oX+\\nPEQF8qG5fUNFHM5SCnBlvib2XyEqL5LwCSmKb8rkqbDGpouxII+Cp4OttekucxF+\\nB0tGLAb4e6cVe703fBVK5pOpNXpYQr8KYcJFCYVsifV6CUyyZv6MY/ujAoGAfGPC\\nZnopbiSxbf17GmqvHTXB8mydkquxyB3fY6hHnMqdBBUw8ULQz/jba3iifdbNkAnF\\n5OkLpRJROqZs+VLQqLbBx2l2NOicF0hlvsWs8+4S8ABsIvjI4Dns2qsqL9cdJaWx\\n6e/AnNjjiSR+WkcIXXw7iobjedtRsvYqQjPqRckCgYBwWF5tYIPfwF4NBJS/ljNR\\n6UuzTxkvZqPEaEVrq5L5o4ufRBLmuRCLu03wIkeyzF1tC4Mqu4TROZphbl7c9kke\\nxG9/lfP4K/3zK4bs6ZIIWuPoVAaiBObsoY2DRQBlodSzf8RiRpIHz8i09/dDhwVc\\nrjeabI/F+R5iWyjZeSvSnA==\\n-----END PRIVATE KEY-----\\n",
+  spreadsheetId: "1ZDjgH419XTzYGNlIiMYp5Zy0EKG-Qe5R8redpPO6BEM"
+};
