@@ -37,20 +37,15 @@ const ContactDirectly = () => {
       isAddress: true
     },
     {
-      label: 'Office hours',
-      value: (
-        <div className="flex-1 justify-center text-P1-Navy text-[10px] lg:text-lg font-normal font-inter leading-4 lg:leading-relaxed">
-          Monday - Friday: 9:00 AM – 6:00 PM ET<br/>
-          Saturday: 10:00 AM – 3:00 PM ET<br/>
-          Sunday: Closed
-        </div>
-      ),
+      label: 'Chat With Us',
+      value: '248-955-2432',
+      link: 'sms:2489552432',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="#0F1C2E" className="w-5 h-5 lg:w-8 lg:h-8 shrink-0">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+          <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
         </svg>
       ),
-      isHours: true
+      isUnderline: true
     }
   ];
 

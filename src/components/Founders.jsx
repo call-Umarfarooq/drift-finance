@@ -4,7 +4,8 @@ const Founders = ({ titleStart = "Your Future. ", titleGold = "Our Commitment.",
   const founders = [
     {
       name: "Pete Grigoriou",
-      image: "/funture-commitment /Rectangle 44.png",
+
+      image: "/funture-commitment /Rectangle 44-2.png",
       linkedin: "https://www.linkedin.com/in/pete-grigoriou-41293173?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
     },
     {
@@ -14,7 +15,7 @@ const Founders = ({ titleStart = "Your Future. ", titleGold = "Our Commitment.",
     },
     {
       name: "Hassan Barada",
-      image: "/funture-commitment /Rectangle 44-2.png",
+      image: "/funture-commitment /Rectangle 44.png",
       linkedin: "https://www.linkedin.com/in/hassan-barada-114a6a85?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
     }
   ];

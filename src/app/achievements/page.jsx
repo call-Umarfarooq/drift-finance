@@ -16,8 +16,8 @@ const AchievementsPage = () => {
             <AchievementsHero />
             <AchievementsStats />
             <div className='mt-10 lg:mt-20'></div>
-            <IndustryRecognition />
-            <div className='mt-10 lg:mt-20'></div>
+            {/* <IndustryRecognition /> */}
+            {/* <div className='mt-10 lg:mt-20'></div> */}
             <AchievementsNumbers />
             <div className='mt-10 lg:mt-20'></div>
             <AchievementsRecognition />

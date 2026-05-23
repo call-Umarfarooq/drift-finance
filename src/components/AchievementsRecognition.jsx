@@ -3,9 +3,9 @@ import React from 'react';
 const AchievementsRecognition = () => {
   const recognitionData = [
     {
-      title: 'Top 10% national mortgage producer',
-      description: 'Ranked in the top 10% of all mortgage sales professionals nationally — every year for six consecutive years.',
-      badge: '2019 – 2025',
+      title: 'Closing at Drift speed',
+      description: 'At Drift, speed is part of the service. From application to closing, we drift through the process so our clients get to the finish line faster than they ever expected.',
+      badge: '',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0F1C2E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 lg:w-10 lg:h-10">
           <path d="M8 21h8m-4-7v7m4-15v4a4 4 0 0 1-8 0V4h8Z"/>
@@ -86,9 +86,11 @@ const AchievementsRecognition = () => {
                 <div className="text-P1-Navy text-[10px] lg:text-base font-normal font-inter leading-4 lg:leading-relaxed">
                   {item.description}
                 </div>
-                <div className="mt-1 lg:mt-2 px-3 py-1 bg-teal-950/20 lg:bg-black/10 rounded-full text-P1-Navy text-[10px] lg:text-xs font-semibold lg:font-semibold font-inter">
-                  {item.badge}
-                </div>
+                {item.badge && (
+                  <div className="mt-1 lg:mt-2 px-3 py-1 bg-teal-950/20 lg:bg-black/10 rounded-full text-P1-Navy text-[10px] lg:text-xs font-semibold lg:font-semibold font-inter">
+                    {item.badge}
+                  </div>
+                )}
               </div>
             </div>
           ))}

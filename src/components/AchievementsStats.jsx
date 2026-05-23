@@ -4,14 +4,14 @@ const AchievementsStats = () => {
   const stats = [
     { value: '$2.5B+', label: 'Closed Like\nYou Have It.' },
     { value: 'Over 9000', label: 'Families Helped\nIn 2025' },
-    { value: 'Top 10%', label: 'National Ranking\n6 Consecutive Years' },
+    // { value: 'Top 10%', label: 'National Ranking\n6 Consecutive Years' },
     { value: '40+', label: 'Years Of Combined\nPrincipal Experience' }
   ];
 
   return (
     <section className="w-full py-4 lg:py-20 bg-neutral-100 -mt-10 lg:-mt-40 flex justify-center items-center">
       <div className="w-full max-w-[1360px] mx-auto px-4 lg:px-10 pt-10 lg:pt-40 flex justify-center items-center gap-3 lg:gap-16">
-        
+
         {stats.map((stat, index) => (
           <React.Fragment key={index}>
             {/* Stat Item */}

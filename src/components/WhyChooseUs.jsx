@@ -7,7 +7,7 @@ const WhyChooseUs = () => {
         
         <div className="text-center">
           <span className="text-P2-Gold text-[10px] lg:text-2xl font-semibold font-inter leading-4 lg:leading-9">Why Choose </span>
-          <span className="text-white text-[10px] lg:text-2xl font-semibold font-inter leading-4 lg:leading-9">Drift Financials</span>
+          <span className="text-white text-[10px] lg:text-2xl font-semibold font-inter leading-4 lg:leading-9">Drift Financial</span>
         </div>
         
         <div className="max-w-[1165px] text-center">
