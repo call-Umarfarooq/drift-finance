@@ -7,6 +7,11 @@ import Testimonials from '@/components/Testimonials'
 import CTA from '@/components/CTA'
 import Footer from '@/components/Footer'
 
+export const metadata = {
+  title: "DSCR Loans",
+  description: "Grow your real estate investment portfolio with DSCR loans from Drift Financial. Qualify based on property cash flow rather than personal income.",
+};
+
 const DSCRLoanPage = () => {
   return (
     <main className="w-full min-h-screen bg-white font-inter">

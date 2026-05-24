@@ -7,6 +7,11 @@ import Testimonials from '@/components/Testimonials'
 import CTA from '@/components/CTA'
 import Footer from '@/components/Footer'
 
+export const metadata = {
+  title: "Non-QM Loans",
+  description: "Explore non-qualified mortgage (Non-QM) loan solutions with Drift Financial, designed for self-employed individuals and unique financial situations.",
+};
+
 const NonQMLoanPage = () => {
   return (
     <main className="w-full min-h-screen bg-white font-inter">

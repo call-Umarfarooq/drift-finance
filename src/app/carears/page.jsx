@@ -8,6 +8,11 @@ import Founders from '@/components/Founders'
 import CTA from '@/components/CTA'
 import Footer from '@/components/Footer'
 
+export const metadata = {
+  title: "Careers",
+  description: "Join the team at Drift Financial. Explore our open positions, learn about our values, and build your career with a leading financial service provider.",
+};
+
 const CarearsPage = () => {
     return (
         <main className="w-full min-h-screen bg-white font-inter">

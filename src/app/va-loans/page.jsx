@@ -7,6 +7,11 @@ import Testimonials from '@/components/Testimonials'
 import CTA from '@/components/CTA'
 import Footer from '@/components/Footer'
 
+export const metadata = {
+  title: "VA Loans",
+  description: "Honoring those who serve. Explore low-rate, no down payment VA loan options from Drift Financial for veterans, active service members, and their families.",
+};
+
 const VALoanPage = () => {
   return (
     <main className="w-full min-h-screen bg-white font-inter">

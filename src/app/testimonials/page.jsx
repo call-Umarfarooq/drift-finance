@@ -9,6 +9,11 @@ import Founders from '@/components/Founders'
 import CTA from '@/components/CTA'
 import Footer from '@/components/Footer'
 
+export const metadata = {
+  title: "Testimonials & Reviews",
+  description: "Read success stories and detailed client reviews to see how Drift Financial provides outstanding support and tailored loan solutions.",
+};
+
 const TestimonialsPage = () => {
     return (
         <main className="w-full min-h-screen bg-white font-inter">

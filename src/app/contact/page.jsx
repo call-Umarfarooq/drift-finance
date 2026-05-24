@@ -6,6 +6,11 @@ import Footer from '@/components/Footer'
 import React from 'react'
 import Founders from '@/components/Founders'
 
+export const metadata = {
+  title: "Contact Us",
+  description: "Get in touch with the experts at Drift Financial. Contact us online, give us a call, or fill out our contact form to speak directly with a principal.",
+};
+
 const ContactPage = () => {
     return (
         <main className="w-full min-h-screen bg-white font-inter">

@@ -12,6 +12,11 @@ import LogoTicker from '@/components/LogoTicker'
 import ServicesCards from '@/components/ServicesCards'
 import FAQ from '@/components/FAQ'
 
+export const metadata = {
+  title: "About Us",
+  description: "Learn more about Drift Financial, our values, our experienced team, and our commitment to helping you navigate your financial journey.",
+};
+
 const AboutUsPage = () => {
     return (
         <main className="w-full min-h-screen bg-white font-inter">

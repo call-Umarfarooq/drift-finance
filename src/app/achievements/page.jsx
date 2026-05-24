@@ -9,6 +9,11 @@ import Testimonials from '@/components/Testimonials'
 import CTA from '@/components/CTA'
 import Footer from '@/components/Footer'
 
+export const metadata = {
+  title: "Our Achievements",
+  description: "Discover Drift Financial's milestones, industry recognition, and our proven track record of excellence in financial services.",
+};
+
 const AchievementsPage = () => {
     return (
         <main className="w-full min-h-screen bg-white font-inter">

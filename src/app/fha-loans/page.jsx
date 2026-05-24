@@ -7,6 +7,11 @@ import Testimonials from '@/components/Testimonials'
 import CTA from '@/components/CTA'
 import Footer from '@/components/Footer'
 
+export const metadata = {
+  title: "FHA Loans",
+  description: "Secure your dream home with low down payment FHA loans from Drift Financial. Ideal for first-time homebuyers and individuals with flexible credit requirements.",
+};
+
 const FHALoanPage = () => {
   return (
     <main className="w-full min-h-screen bg-white font-inter">

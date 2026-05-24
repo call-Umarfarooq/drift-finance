@@ -7,6 +7,11 @@ import Testimonials from '@/components/Testimonials'
 import CTA from '@/components/CTA'
 import Footer from '@/components/Footer'
 
+export const metadata = {
+  title: "Conventional Loans",
+  description: "Explore conventional loan options with Drift Financial. Find stable rates, flexible terms, and professional guidance for your next home purchase or refinance.",
+};
+
 const ConventionalLoanPage = () => {
   return (
     <main className="w-full min-h-screen bg-white font-inter">
