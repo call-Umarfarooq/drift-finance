@@ -19,7 +19,7 @@ const IndustryRecognition = () => {
             </div>
           </div>
           
-          <div className="w-full max-w-[320px] lg:max-w-none text-P1-Navy text-[10px] lg:text-base font-normal font-inter capitalize lg:normal-case leading-4 lg:leading-relaxed">
+          <div className="w-full max-w-[320px] lg:max-w-none text-P1-Navy text-[10px] lg:text-base font-normal font-inter normal-case leading-4 lg:leading-relaxed">
             The mortgage industry ranks professionals annually based on closed loan volume, client satisfaction, and overall production. Breaking into the top 10% once is an achievement. Doing it six years in a row — across bull markets, rising rate environments, and economic uncertainty — is a different thing entirely.
             <br/><br className="hidden lg:block"/>
             It means our principals have consistently outperformed 90% of all mortgage professionals in the country, year after year, regardless of market conditions. That consistency is what you get when you work with Drift Financial.

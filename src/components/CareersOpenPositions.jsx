@@ -3,7 +3,7 @@ import React from 'react';
 const CareersOpenPositions = () => {
   const jobs = [
     {
-      title: "Mortgage loan originator",
+      title: "Mortgage Loan Originator",
       description: "At Drift Financial, our Loan Originators aren't just salespeople — they're trusted advisors.",
       location: "100% Remote",
       type: "Full-time"

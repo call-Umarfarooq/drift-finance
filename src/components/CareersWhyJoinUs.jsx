@@ -55,7 +55,7 @@ const CareersWhyJoinUs = () => {
             Why join us
           </div>
           <div className="w-full max-w-[320px] lg:max-w-[900px] text-P1-Navy text-2xl lg:text-6xl font-semibold font-inter capitalize leading-7 lg:leading-[1.2]">
-            What You Get When You<br className="hidden lg:block"/>
+            What You Get When You <br className="hidden lg:block"/>
             Join <span className="text-P2-Gold font-playfair italic">Drift</span>
           </div>
         </div>

@@ -35,6 +35,7 @@ const Footer = () => {
                 <Link href="/achievements" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Achievements</Link>
                 <Link href="/mortgage-calculator" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Mortgage Calculator</Link>
                 <Link href="/carears" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Careers</Link>
+                <Link href="/privacy-policy" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Privacy Policy</Link>
               </div>
             </div>
 
@@ -58,7 +59,7 @@ const Footer = () => {
                 <a href="tel:888-338-5504" className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">888-338-5504</a>
                 <a href="mailto:Drift@driftfinancial.com" onClick={triggerEmail} className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4">Drift@driftfinancial.com</a>
                 <address className="text-white text-[10px] lg:text-sm font-normal font-inter not-italic max-w-[120px] lg:max-w-[200px] leading-4">
-                  209 west sixth street, Royal Oak MI, 48067
+                  209 W Sixth St, Royal Oak MI, 48067
                 </address>
               </div>
               {/* Social Icons */}
@@ -82,8 +83,8 @@ const Footer = () => {
             <div className="hidden lg:flex flex-col gap-4">
               <h4 className="text-white text-lg font-bold font-inter leading-6">Other pages</h4>
               <div className="flex flex-col gap-3">
-                <a href="#" className="text-white text-sm font-normal font-inter hover:opacity-80 transition-opacity">Privacy policy</a>
-                <a href="#" className="text-white text-sm font-normal font-inter hover:opacity-80 transition-opacity">Terms & conditions</a>
+                <Link href="/privacy-policy" className="text-white text-sm font-normal font-inter hover:opacity-80 transition-opacity">Privacy policy</Link>
+                <Link href="/terms-and-conditions" className="text-white text-sm font-normal font-inter hover:opacity-80 transition-opacity">Terms & conditions</Link>
                 <a href="#" className="text-white text-sm font-normal font-inter hover:opacity-80 transition-opacity">FAQ</a>
               </div>
             </div>
@@ -96,7 +97,7 @@ const Footer = () => {
           <div className="w-full h-px bg-white/20"></div>
           <div className="flex flex-row justify-between items-center gap-2 lg:gap-4">
             <div className="text-white text-[8px] lg:text-sm font-normal font-outfit leading-3 lg:leading-normal">
-              NMLS #847291 · Equal Housing Lender
+              NMLS #2822905 · Equal Housing Lender
             </div>
             <div className="text-white text-[8px] lg:text-sm font-normal font-outfit leading-3 lg:leading-normal">
               ©2026 Drift Financial. All rights reserved.

@@ -21,10 +21,10 @@ const AboutUs = () => {
             From The Nation's Largest Retail Lender To Your Dedicated Mortgage Partner.
           </div>
           
-          <div className="max-w-[640px] text-center lg:text-left text-P1-Navy text-[10px] lg:text-base font-normal font-inter leading-4 lg:leading-6 opacity-80">
-            Our Three Founders Spent Years As Senior Sales Leaders At The Country's Biggest Retail Lender — Managing High-Volume Operations And Mastering Every Corner Of The Mortgage Market. With Over 40 Years Of Combined Experience, They Made A Deliberate Choice: Leave The Corporate Machine Behind And Build Something Better. A Boutique Brokerage Where That Same Big-Bank Expertise Works Exclusively For You — Not The Institution.
+          <div className="max-w-[640px] text-center lg:text-left text-P1-Navy text-[10px] lg:text-base font-normal font-inter normal-case leading-4 lg:leading-6 opacity-80">
+            Our three founders spent years as senior sales leaders at the country's biggest retail lender — managing high-volume operations and mastering every corner of the mortgage market. With over 40 years of combined experience, they made a deliberate choice: leave the corporate machine behind and build something better. A boutique brokerage where that same big-bank expertise works exclusively for you — not the institution.
             <br/><br/>
-            We've Seen Every Market Cycle, Every Rate Environment, Every Loan Scenario. That Depth Of Knowledge Means Our Clients Don't Just Get A Mortgage — They Get A Strategy Built Around Their Long-Term Financial Future.
+            We've seen every market cycle, every rate environment, every loan scenario. That depth of knowledge means our clients don't just get a mortgage — they get a strategy built around their long-term financial future.
           </div>
           
           <Link href="/contact" className="w-auto px-6 py-2 lg:px-8 lg:py-3.5 bg-P2-Gold hover:bg-opacity-90 transition-colors rounded-full flex justify-center items-center gap-[5px] lg:gap-2 mt-2 cursor-pointer group overflow-hidden">

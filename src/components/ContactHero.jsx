@@ -48,8 +48,8 @@ const ContactHero = () => {
           </div>
 
           {/* Subheading */}
-          <div className="w-full max-w-[240px] lg:max-w-[850px] text-center text-white text-[10px] lg:text-xl font-normal font-inter capitalize leading-tight lg:leading-[30px] px-4">
-            Ready To Apply Or Just Exploring? Our Principals Are Here With Straight Answers And Zero Sales Pressure.
+          <div className="w-full max-w-[240px] lg:max-w-[850px] text-center text-white text-[10px] lg:text-xl font-normal font-inter normal-case leading-tight lg:leading-[30px] px-4">
+            Ready to apply or just exploring? Our principals are here with straight answers and zero sales pressure.
           </div>
 
         </div>

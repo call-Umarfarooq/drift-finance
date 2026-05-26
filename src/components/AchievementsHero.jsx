@@ -42,8 +42,8 @@ const AchievementsHero = () => {
           </div>
 
           {/* Subheading */}
-          <div className="w-full text-center text-white text-[10px] lg:text-xl font-normal font-inter capitalize leading-snug lg:leading-8 max-w-[850px] mt-4 px-4">
-            These Numbers Aren't Just Milestones — They're Proof That Putting Clients First, In Every Market Condition, Produces Results That Speak For Themselves.
+          <div className="w-full text-center text-white text-[10px] lg:text-xl font-normal font-inter normal-case leading-snug lg:leading-8 max-w-[850px] mt-4 px-4">
+            These numbers aren't just milestones — they're proof that putting clients first, in every market condition, produces results that speak for themselves.
           </div>
 
         </div>

@@ -20,7 +20,7 @@ const FullSuiteCards = () => {
     {
       title: "VA Loans",
       description: "Exclusive benefits for veterans and active-duty military. Zero down payment, no PMI, and rates you won't find anywhere else.",
-      tag: "From 6.25% APR",
+      tag: "",
       icon: <img src="/WebsiteDevmode_icon/Layer_1-2.svg" alt="VA Loans" className="w-16 h-16 object-contain" />,
       link: "/va-loans"
     },
@@ -77,11 +77,13 @@ const FullSuiteCards = () => {
                   {card.description}
                 </div>
 
-                <div className="px-4 py-1.5 lg:px-6 lg:py-2 bg-slate-400/30 rounded-full inline-flex justify-center items-center mt-2 lg:mt-0">
-                  <div className="text-center text-P1-Navy text-[10px] lg:text-sm font-medium font-inter">
-                    {card.tag}
+                {card.tag && (
+                  <div className="px-4 py-1.5 lg:px-6 lg:py-2 bg-slate-400/30 rounded-full inline-flex justify-center items-center mt-2 lg:mt-0">
+                    <div className="text-center text-P1-Navy text-[10px] lg:text-sm font-medium font-inter">
+                      {card.tag}
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             </Link>
           ))}

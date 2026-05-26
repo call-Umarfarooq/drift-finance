@@ -41,7 +41,7 @@ const FinanceServicesHero = () => {
             </div>
 
             {/* Subheading */}
-            <div className="w-full max-w-[807px] text-center text-white text-[10px] lg:text-xl font-normal font-inter capitalize leading-4 lg:leading-6 opacity-80 px-4">
+            <div className="w-full max-w-[807px] text-center text-white text-[10px] lg:text-xl font-normal font-inter normal-case leading-4 lg:leading-6 opacity-80 px-4">
               From your first home to your next investment — Drift Financial has the right program, the right rate, and the right people to get it done.
             </div>
 

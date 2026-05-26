@@ -2,7 +2,7 @@ import React from 'react';
 
 const AchievementsStats = () => {
   const stats = [
-    { value: '$2.5B+', label: 'Closed Like\nYou Have It.' },
+    { value: '$2.5B+', label: 'Closed in the\nprevious year' },
     { value: 'Over 9000', label: 'Families Helped\nIn 2025' },
     // { value: 'Top 10%', label: 'National Ranking\n6 Consecutive Years' },
     { value: '40+', label: 'Years Of Combined\nPrincipal Experience' }

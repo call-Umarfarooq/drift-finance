@@ -26,7 +26,7 @@ const ContactDirectly = () => {
     },
     {
       label: 'Office',
-      value: '209 West Sixth Street, Royal Oak MI 48067',
+      value: '209 W Sixth St, Royal Oak MI 48067',
       link: '#',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="#0F1C2E" className="w-4 h-5 lg:w-6 lg:h-8 shrink-0">

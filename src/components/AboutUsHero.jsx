@@ -40,7 +40,7 @@ const AboutUsHero = () => {
               </div>
 
               {/* Body text */}
-              <div className="w-full max-w-[903px] text-center text-white text-[10px] lg:text-base font-normal font-inter capitalize leading-4 lg:leading-6">
+              <div className="w-full max-w-[903px] text-center text-white text-[10px] lg:text-base font-normal font-inter normal-case leading-4 lg:leading-6">
                 Our three founders spent years as Senior Sales Leaders at the country&apos;s biggest retail lender — managing high-volume operations and mastering every corner of the mortgage market. With over 40 years of combined experience, they made a deliberate choice: leave the corporate machine behind and build something better. A boutique brokerage where that same big-bank expertise works exclusively for you — not the institution.
               </div>
 

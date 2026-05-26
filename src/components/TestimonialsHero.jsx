@@ -54,8 +54,8 @@ const TestimonialsHero = () => {
           </div>
 
           {/* Subheading */}
-          <div className="w-full max-w-[600px] text-center text-white text-[10px] lg:text-xl font-normal font-inter capitalize leading-snug lg:leading-8 px-4 lg:px-0">
-            Every Review Below Is From A Real Borrower Who Trusted Us With Their Biggest Financial Decision.
+          <div className="w-full max-w-[600px] text-center text-white text-[10px] lg:text-xl font-normal font-inter normal-case leading-snug lg:leading-8 px-4 lg:px-0">
+            Every review below is from a real borrower who trusted us with their biggest financial decision.
           </div>
 
         </div>

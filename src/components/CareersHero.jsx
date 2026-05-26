@@ -48,7 +48,7 @@ const CareersHero = () => {
           </div>
 
           {/* Subheading */}
-          <div className="w-full max-w-[240px] lg:max-w-[850px] text-center text-white text-[10px] lg:text-xl font-normal font-inter capitalize leading-tight lg:leading-[30px] px-4">
+          <div className="w-full max-w-[240px] lg:max-w-[850px] text-center text-white text-[10px] lg:text-xl font-normal font-inter normal-case leading-tight lg:leading-[30px] px-4">
             Join a boutique mortgage team that moves fast, rewards performance, and puts people over paperwork — clients and colleagues alike.
           </div>
 

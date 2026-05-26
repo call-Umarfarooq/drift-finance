@@ -26,7 +26,7 @@ const AchievementsRecognition = () => {
     },
     {
       title: '$2.5B+ volume producer',
-      description: 'Achieved $2.5 billion in closed loan volume in 2025 — our first full year operating as an independent boutique brokerage.',
+      description: 'Achieved $2.5 billion in closed loan volume in 2025.',
       badge: '2025',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0F1C2E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 lg:w-10 lg:h-10">

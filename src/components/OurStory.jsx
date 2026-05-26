@@ -17,9 +17,9 @@ const OurStory = () => {
           </div>
           
           <div className="max-w-[640px] text-center lg:text-left text-P1-Navy text-[10px] lg:text-base font-normal font-inter leading-4 lg:leading-6 opacity-80">
-            Our Three Founders Spent Years At The Top Of The Nation&apos;s Largest Retail Lender, Leading High-Volume Operations And Mastering Every Corner Of The Mortgage Market. They Were Good At It. But Something Was Missing — The Ability To Truly Put The Client First.
+            Our three founders spent years at the top of the nation's largest retail lender, leading high-volume operations and mastering every corner of the mortgage market. They were good at it, but something was missing — the ability to truly put the client first.
             <br/><br/>
-            We Decided To Grow And Build Drift Financial. A Boutique Brokerage Where 40+ Years Of Combined Expertise Works Exclusively In Your Corner. No Bureaucracy. No Quotas. Just Honest, Strategic Mortgage Advice Tailored To Your Long-Term Financial Goals.
+            We decided to grow and build Drift Financial. A boutique brokerage where 40+ years of combined expertise works exclusively in your corner. No bureaucracy. No quotas. Just honest, strategic mortgage advice tailored to your long-term financial goals.
           </div>
         </div>
 

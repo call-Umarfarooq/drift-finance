@@ -81,7 +81,7 @@ const ContactUs = () => {
                 Drift@driftfinancial.com
               </a>
               <address className="text-P1-Navy text-base font-normal font-inter leading-6 not-italic text-center lg:text-left">
-                209 west sixth street,<br/>Royal Oak MI, 48067
+                209 W Sixth St,<br/>Royal Oak MI, 48067
               </address>
             </div>
             
@@ -157,6 +157,10 @@ const ContactUs = () => {
               </div>
             )}
             
+            <p className="text-neutral-500 text-[10px] lg:text-xs leading-relaxed opacity-85 text-center lg:text-left mt-2 max-w-[650px]">
+              By submitting your information, you agree that Drift Financial may contact you by phone, email, and text message regarding mortgage products and services. Consent is not a condition of purchase. Message and data rates may apply. Reply STOP to opt out of text messages.
+            </p>
+
             <div className="w-full flex justify-center lg:justify-start mt-2">
               <button 
                 type="submit"

@@ -48,7 +48,7 @@ const FAQ = () => {
         <div className="w-full max-w-[1060px] flex flex-col justify-start items-center gap-3 lg:gap-5">
           <div className="text-center">
             <span className="text-Secondary-Deep-Navy text-2xl lg:text-5xl font-bold font-poppins capitalize leading-8 lg:leading-[63px]">You have questions and we have </span>
-            <span className="text-P2-Gold text-2xl lg:text-5xl font-bold font-playfair italic capitalize leading-8 lg:leading-[63px]">answers</span>
+            <span className="text-P2-Gold text-2xl lg:text-5xl font-bold font-playfair italic capitalize leading-8 lg:leading-[63px]">answers.</span>
           </div>
           <div className="w-full text-center text-Secondary-Deep-Navy text-[10px] lg:text-base font-normal font-poppins leading-4 lg:leading-relaxed">
             Navigating the dynamic mortgage landscape can feel daunting. We've compiled a list of commonly asked questions by Residential and Commercial borrowers. For deeper insight, schedule your consultation with one of our Mortgage experts today.

@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 const CareersApplyForm = () => {
   const [formData, setFormData] = useState({
@@ -226,7 +227,7 @@ const CareersApplyForm = () => {
               className="w-3.5 h-3.5 lg:w-5 lg:h-5 mt-0.5 bg-neutral-300 rounded-[2px] lg:rounded-[5px] shrink-0 cursor-pointer accent-P1-Navy disabled:opacity-50" 
             />
             <div className="text-P1-Navy text-[8px] lg:text-base font-semibold font-inter leading-3 lg:leading-normal">
-              I agree to be contacted by Drift Financial via phone, text, or email regarding this application. View our <span className="underline">privacy policy</span>.
+              I agree to receive calls, text messages, and emails from Drift Financial as described below. View our <Link href="/privacy-policy" className="underline hover:text-P2-Gold transition-colors">Privacy Policy</Link> and <Link href="/terms-and-conditions" className="underline hover:text-P2-Gold transition-colors">Terms & Conditions</Link>.
             </div>
           </div>
 
@@ -240,6 +241,10 @@ const CareersApplyForm = () => {
               {status === 'success' ? '✅' : '❌'} {statusMsg}
             </div>
           )}
+
+          <p className="text-neutral-500 text-[10px] lg:text-xs leading-relaxed opacity-85 text-center mt-2 max-w-[900px] mx-auto">
+            By clicking “Submit,” I expressly consent to receive calls, text messages, and emails from Drift Financial regarding mortgage products and services at the telephone number and email address provided, including through the use of automated technology and prerecorded messages where permitted by law. Consent is not a condition of purchase. Message and data rates may apply. Reply STOP to opt out of text messages.
+          </p>
 
           {/* Submit Button */}
           <div className="w-full flex justify-center mt-2 lg:mt-4">
