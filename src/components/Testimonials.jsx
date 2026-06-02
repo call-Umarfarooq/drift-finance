@@ -6,6 +6,24 @@ const Testimonials = () => {
 
   const testimonials = [
     {
+      text: "Thank you to Drift Financial. From start to finish honest answers and the whole process on my HELOC was under 10 days",
+      name: "Mark Steese",
+      image: "https://ui-avatars.com/api/?name=Mark+Steese&background=5a67d8&color=fff",
+      url: "https://maps.app.goo.gl/gKmt2TQPrf3dXBVq7"
+    },
+    {
+      text: "Hass Barada and his team at drift financial have given me and my family a trustworthy experience. Efficient professional! Thank you drift!",
+      name: "M J",
+      image: "https://ui-avatars.com/api/?name=M+J&background=2d3748&color=fff",
+      url: "https://maps.app.goo.gl/HVsFjvhe955D4tjD7"
+    },
+    {
+      text: "I had a wonderful experience working with Gus at Drift Financial. He helped me refinance my loan and made the entire process smooth, stress-free, and easy to understand. Gus was knowledgeable, responsive, and always took the time to answer my questions thoroughly.\n\nI highly recommend Gus and the team at Drift Financial to anyone looking for financial guidance or refinancing assistance. It was an absolute pleasure working with them!",
+      name: "Valerie Sologub",
+      image: "https://ui-avatars.com/api/?name=Valerie+Sologub&background=2b6cb0&color=fff",
+      url: "https://maps.app.goo.gl/iDujb36GQEkYkvG46"
+    },
+    {
       text: "I had a great experience working with Drift Financial, and the entire mortgage process was smooth from start to finish. Hassan Barada was especially outstanding—professional, responsive, and extremely knowledgeable. He took the time to explain everything clearly and made sure I felt confident at every step. His attention to detail and commitment to getting the best outcome really stood out. I highly recommend Drift Financial and Hassan to anyone looking for a stress-free and efficient mortgage experience.",
       name: "Jamal Maraachli",
       // role: "4 reviews",
@@ -25,27 +43,6 @@ const Testimonials = () => {
       // role: "5 reviews",
       image: "https://ui-avatars.com/api/?name=Al+H&background=2b6cb0&color=fff",
       url: "https://maps.app.goo.gl/fYF16Fn4Xxa6f1Tv7"
-    },
-    {
-      text: "Had a great experience working with Gus at Drift! Great customer service and quick process! Thanks!",
-      name: "Anna Fatouhi",
-      // role: "Local Guide • 13 reviews",
-      image: "https://ui-avatars.com/api/?name=Anna+Fatouhi&background=319795&color=fff",
-      url: "https://maps.app.goo.gl/SoKqBkZdgZLBDh1Q6"
-    },
-    {
-      text: "Great Experience all around. Quick closing, great communication.",
-      name: "Mike Ajami",
-      // role: "3 reviews",
-      image: "https://ui-avatars.com/api/?name=Mike+Ajami&background=2f855a&color=fff",
-      url: "https://maps.app.goo.gl/piy99iwNz46km4XN9"
-    },
-    {
-      text: "Great service. Great experience overall",
-      name: "Sami Hammoud",
-      // role: "9 reviews",
-      image: "https://ui-avatars.com/api/?name=Sami+Hammoud&background=744210&color=fff",
-      url: "https://maps.app.goo.gl/wSxPPkHs3uHy5Y7r5"
     }
   ];
 

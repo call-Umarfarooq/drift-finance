@@ -64,7 +64,7 @@ const Hero = () => {
             </div>
             
             <div className="flex justify-center lg:justify-start items-center gap-3.5 lg:gap-4 mt-2 lg:mt-4 w-full lg:w-auto">
-              <Link href="/application" className="w-[140px] lg:w-auto h-9 lg:h-auto px-4 lg:px-6 py-2 lg:py-3.5 cursor-pointer bg-P1-Navy rounded-[100px] flex justify-center items-center gap-2 hover:bg-P1-Navy/90 transition-colors group">
+              <Link href="/contact?scroll=form" className="w-[140px] lg:w-auto h-9 lg:h-auto px-4 lg:px-6 py-2 lg:py-3.5 cursor-pointer bg-P1-Navy rounded-[100px] flex justify-center items-center gap-2 hover:bg-P1-Navy/90 transition-colors group">
                 <span className="text-white text-[10px] lg:text-base font-semibold font-inter">Start My Application</span>
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 hidden lg:block">
                   <path d="M1 11L11 1M11 1H3.5M11 1V8.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

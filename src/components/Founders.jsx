@@ -4,17 +4,19 @@ const Founders = ({ titleStart = "Your Future. ", titleGold = "Our Commitment.",
   const founders = [
     {
       name: "Pete Grigoriou",
-
+      nmls: "NMLS #999405",
       image: "/funture-commitment /Rectangle 44-2.png",
       linkedin: "https://www.linkedin.com/in/pete-grigoriou-41293173?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
     },
     {
       name: "Gassan Fatouhi",
+      nmls: "NMLS #998868",
       image: "/funture-commitment /Rectangle 44-1.png",
       linkedin: "https://www.linkedin.com/in/gassan-fatouhi-148666405?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
     },
     {
       name: "Hassan Barada",
+      nmls: "NMLS #1203216",
       image: "/funture-commitment /Rectangle 44.png",
       linkedin: "https://www.linkedin.com/in/hassan-barada-114a6a85?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
     }
@@ -52,9 +54,12 @@ const Founders = ({ titleStart = "Your Future. ", titleGold = "Our Commitment.",
                 src={founder.image}
                 alt={founder.name}
               />
-              <div className="w-[80%] lg:w-[90%] h-16 lg:h-20 px-7 bg-neutral-300 rounded-3xl flex flex-col justify-center items-center relative z-10">
-                <div className="text-P1-Navy text-center text-2xl lg:text-3xl font-semibold font-poppins leading-tight">
+              <div className="w-[80%] lg:w-[90%] h-auto px-7 py-3 lg:py-4 bg-neutral-300 rounded-3xl flex flex-col justify-center items-center relative z-10 gap-0.5">
+                <div className="text-P1-Navy text-center text-xl lg:text-3xl font-semibold font-poppins leading-tight">
                   {founder.name}
+                </div>
+                <div className="text-P1-Navy/70 text-center text-[10px] lg:text-sm font-medium font-inter tracking-wide">
+                  {founder.nmls}
                 </div>
               </div>
             </a>

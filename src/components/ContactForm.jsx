@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 const ContactForm = () => {
@@ -16,6 +16,27 @@ const ContactForm = () => {
   });
   const [status, setStatus] = useState('idle'); // idle | loading | success | error
   const [statusMsg, setStatusMsg] = useState('');
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('scroll') === 'form') {
+      const scrollToForm = () => {
+        const el = document.getElementById('contact-form');
+        if (el) {
+          const top = el.getBoundingClientRect().top + window.scrollY - 20;
+          window.scrollTo({ top, behavior: 'smooth' });
+          return true;
+        }
+        return false;
+      };
+      if (!scrollToForm()) {
+        const interval = setInterval(() => {
+          if (scrollToForm()) clearInterval(interval);
+        }, 100);
+        setTimeout(() => clearInterval(interval), 3000);
+      }
+    }
+  }, []);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -106,7 +127,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="w-full bg-white flex justify-center ">
+    <section id="contact-form" className="w-full bg-white flex justify-center scroll-mt-24">
       <div className="w-full max-w-[1360px] mx-auto px-6 lg:px-10 flex flex-col items-center gap-8 lg:gap-16">
 
         {/* Header Section */}

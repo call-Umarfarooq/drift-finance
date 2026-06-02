@@ -64,7 +64,7 @@ const VALoanHero = () => {
 
         {/* Action Buttons */}
         <div className="flex flex-row justify-center items-center gap-3 lg:gap-4 mt-4 lg:mt-8 w-full">
-          <Link href="/contact" className="flex-1 lg:flex-none lg:w-56 px-4 lg:px-6 py-2.5 lg:py-3 bg-white rounded-[100px] flex justify-center items-center gap-1.5 lg:gap-1.5 hover:opacity-90 transition-opacity group h-10 lg:h-12 overflow-hidden">
+          <Link href="/contact?scroll=form" className="flex-1 lg:flex-none lg:w-56 px-4 lg:px-6 py-2.5 lg:py-3 bg-white rounded-[100px] flex justify-center items-center gap-1.5 lg:gap-1.5 hover:opacity-90 transition-opacity group h-10 lg:h-12 overflow-hidden">
             <span className="text-P1-Navy text-[11px] lg:text-base font-semibold font-inter whitespace-nowrap">Start My Application</span>
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-3 h-3 lg:w-4 lg:h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">
               <path d="M1.5 16.5L16.5 1.5M16.5 1.5H5.25M16.5 1.5V12.75" stroke="#042538" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

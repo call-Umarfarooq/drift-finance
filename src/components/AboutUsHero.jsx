@@ -45,7 +45,7 @@ const AboutUsHero = () => {
               </div>
 
               {/* CTA Button */}
-              <Link href="/application" className="w-auto h-10 lg:h-12 px-6 lg:px-8 py-2 bg-P2-Gold rounded-[100px] inline-flex justify-center items-center gap-2 overflow-hidden hover:opacity-90 transition-opacity group">
+              <Link href="/contact?scroll=form" className="w-auto h-10 lg:h-12 px-6 lg:px-8 py-2 bg-P2-Gold rounded-[100px] inline-flex justify-center items-center gap-2 overflow-hidden hover:opacity-90 transition-opacity group">
                 <span className="text-center text-white text-[12px] lg:text-base font-semibold font-inter leading-4 lg:leading-6">Start My Application</span>
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
                   <path d="M1 11L11 1M11 1H3.5M11 1V8.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

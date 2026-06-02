@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { triggerEmail } from '@/utils/emailHelper';
+import Link from 'next/link';
 
 const FloatingEmailButton = () => {
   const [showToast, setShowToast] = useState(false);
@@ -23,32 +23,30 @@ const FloatingEmailButton = () => {
 
   return (
     <>
-      <a
-        href="mailto:Drift@driftfinancial.com"
-        onClick={triggerEmail}
+      <Link
+        href="/contact?scroll=form"
         className="fixed bottom-6 right-6 z-50 flex items-center gap-0 hover:gap-2.5 bg-P2-Gold text-white font-semibold rounded-full p-4 shadow-2xl transition-all duration-500 hover:scale-105 group cursor-pointer border border-P2-Gold/30 hover:bg-P1-Navy hover:border-P2-Gold active:scale-95"
-        aria-label="Email Drift Financial"
+        aria-label="Contact Drift Financial"
       >
         {/* Golden pulsing ring around it */}
         <span className="absolute inset-0 rounded-full bg-P2-Gold/30 animate-ping opacity-75 group-hover:opacity-0 transition-opacity duration-300"></span>
         
-        <div className="max-w-0 overflow-hidden group-hover:max-w-[100px] transition-all duration-500 ease-out font-inter text-sm tracking-wide">
+        <div className="max-w-0 overflow-hidden group-hover:max-w-[120px] transition-all duration-500 ease-out font-inter text-sm tracking-wide">
           <span className="whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-bold text-white uppercase text-xs tracking-wider">
-            Email Us
+            Message Us
           </span>
         </div>
         
-        {/* Beautiful envelope svg icon */}
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          viewBox="0 0 24 24" 
-          fill="currentColor" 
+        {/* Message/chat icon */}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
           className="w-6 h-6 transition-transform duration-500 group-hover:scale-110 text-white"
         >
-          <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
-          <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
+          <path fillRule="evenodd" d="M4.804 21.644A6.707 6.707 0 006 21.75a6.721 6.721 0 003.583-1.029c.774.182 1.584.279 2.417.279 5.322 0 9.75-3.97 9.75-9 0-5.03-4.428-9-9.75-9s-9.75 3.97-9.75 9c0 2.409 1.025 4.587 2.674 6.192.232.226.277.428.254.543a3.73 3.73 0 01-.814 1.686.75.75 0 00.44 1.223 6.75 6.75 0 003-.13z" clipRule="evenodd" />
         </svg>
-      </a>
+      </Link>
 
       {/* Highly premium corporate custom Toast notification */}
       <div 

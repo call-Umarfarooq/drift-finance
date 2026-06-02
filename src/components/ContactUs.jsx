@@ -58,7 +58,7 @@ const ContactUs = () => {
   };
 
   return (
-    <section className="w-full bg-neutral-100 flex justify-center pt-14 pb-16 lg:pt-20 lg:pb-24 px-6 lg:px-10">
+    <section id="contact-form" className="w-full bg-neutral-100 flex justify-center pt-14 pb-16 lg:pt-20 lg:pb-24 px-6 lg:px-10">
       <div className="w-full max-w-[1360px] flex flex-col justify-between items-center lg:items-start gap-10 lg:gap-10">
         
         {/* Left Column - Contact Info */}
@@ -80,6 +80,9 @@ const ContactUs = () => {
               <a href="mailto:Drift@driftfinancial.com" onClick={triggerEmail} className="text-P1-Navy text-base font-normal font-inter leading-6 hover:opacity-80 transition-opacity text-center lg:text-left">
                 Drift@driftfinancial.com
               </a>
+              <span className="text-P1-Navy text-base font-normal font-inter leading-6 text-center lg:text-left">
+                NMLS #2822905 · Equal Housing Lender
+              </span>
               <address className="text-P1-Navy text-base font-normal font-inter leading-6 not-italic text-center lg:text-left">
                 209 W Sixth St,<br/>Royal Oak MI, 48067
               </address>
