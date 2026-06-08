@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 
 const CareersOpenPositions = () => {
@@ -89,13 +90,20 @@ const CareersOpenPositions = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-1 text-P1-Navy font-medium lg:font-semibold text-sm lg:text-2xl whitespace-nowrap mt-1">
+                <a 
+                  href="#apply-form"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('apply-form')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="flex items-center gap-1 text-P1-Navy font-medium lg:font-semibold text-sm lg:text-2xl whitespace-nowrap mt-1 hover:text-P2-Gold transition-colors"
+                >
                   Apply 
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 lg:w-6 lg:h-6 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">
                     <line x1="7" y1="17" x2="17" y2="7"></line>
                     <polyline points="7 7 17 7 17 17"></polyline>
                   </svg>
-                </div>
+                </a>
               </div>
             </div>
           ))}

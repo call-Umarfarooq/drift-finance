@@ -41,7 +41,7 @@ export async function POST(request) {
     // Append to sheet
     const appendResponse = await sheets.spreadsheets.values.append({
       spreadsheetId,
-      range: `${sheetName}!A:Z`,
+      range: `'${sheetName}'!A:Z`,
       valueInputOption: 'USER_ENTERED',
       insertDataOption: 'INSERT_ROWS',
       requestBody: {

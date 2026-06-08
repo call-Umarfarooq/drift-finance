@@ -84,7 +84,7 @@ const ContactForm = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          sheetName: 'Sheet2',
+          sheetName: 'Contact page full form',
           values: [
             formData.name,
             formData.lastName,

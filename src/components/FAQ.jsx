@@ -41,7 +41,7 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="w-full bg-white px-6 lg:px-10 flex justify-center">
+    <section id="faq" className="w-full bg-white px-6 lg:px-10 flex justify-center scroll-mt-24">
       <div className="w-full max-w-[1360px] flex flex-col justify-start items-center gap-5 lg:gap-10">
         
         {/* Header Section */}
