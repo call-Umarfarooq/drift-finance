@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import TopBar from '@/components/TopBar';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -12,11 +13,15 @@ export const metadata = {
 export default function TermsAndConditionsPage() {
   const sections = [
     { id: "consent", label: "Consent to Contact" },
+    { id: "sms-consent", label: "SMS Consent Communication" },
+    { id: "types-sms", label: "Types of SMS Communications" },
+    { id: "opt-in", label: "Opt-In Method" },
     { id: "no-condition", label: "No Condition of Purchase" },
     { id: "frequency", label: "Message Frequency" },
     { id: "rates", label: "Message & Data Rates" },
     { id: "opt-out", label: "Opting Out" },
     { id: "assistance", label: "Assistance & Help" },
+    { id: "disclosures", label: "Standard Messaging Disclosures" },
     { id: "revocation", label: "Consent Revocation" },
     { id: "disclaimer", label: "Carrier Disclaimer" },
     { id: "record", label: "Record of Consent" },
@@ -25,7 +30,7 @@ export default function TermsAndConditionsPage() {
   return (
     <main className="w-full min-h-screen bg-neutral-50 font-inter">
       <TopBar />
-      
+
       {/* Hero Section */}
       <section className="w-full bg-P1-Navy rounded-b-3xl lg:rounded-b-[40px] pb-16 lg:pb-24 flex justify-center">
         <div className="w-full max-w-[1360px] mx-auto">
@@ -57,7 +62,7 @@ export default function TermsAndConditionsPage() {
       {/* Content Section */}
       <section className="w-full py-12 lg:py-20 flex justify-center px-6 lg:px-10">
         <div className="w-full max-w-[1360px] grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-          
+
           {/* Sticky Sidebar Navigation (lg:col-span-4) */}
           <aside className="lg:col-span-4 sticky top-6 bg-white border border-neutral-200 rounded-3xl p-6 shadow-sm hidden lg:flex flex-col gap-6">
             <h3 className="text-P1-Navy text-base font-bold uppercase tracking-wider border-b border-neutral-100 pb-3">
@@ -78,7 +83,7 @@ export default function TermsAndConditionsPage() {
 
           {/* Policy Document (lg:col-span-8) */}
           <article className="lg:col-span-8 bg-white border border-neutral-200 rounded-3xl p-6 lg:p-12 shadow-sm flex flex-col gap-10">
-            
+
             <div className="text-center lg:text-left border-b border-neutral-100 pb-6">
               <h2 className="text-P1-Navy text-xl lg:text-3xl font-bold font-inter leading-tight">
                 TCPA & Text Messaging Consent Disclosure
@@ -96,7 +101,7 @@ export default function TermsAndConditionsPage() {
               <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
                 By providing your phone number to Drift Financial through our website, online forms, loan applications, advertisements, social media platforms, or any other communication channel, you expressly consent to receive communications from Drift Financial, its employees, agents, and service providers.
               </p>
-              
+
               <div className="bg-neutral-50 border border-neutral-200 rounded-2xl p-5 flex flex-col gap-3 mt-2">
                 <h4 className="text-P1-Navy text-sm lg:text-base font-bold uppercase tracking-wider">
                   📢 Communication Formats
@@ -136,10 +141,48 @@ export default function TermsAndConditionsPage() {
               </p>
             </section>
 
+            {/* SMS Consent Communication */}
+            <section id="sms-consent" className="flex flex-col gap-4 scroll-mt-6">
+              <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
+                <span className="text-P2-Gold font-mono text-base lg:text-lg">02.</span> SMS Consent Communication
+              </h2>
+              <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
+                The information (Phone Numbers) obtained as part of the SMS consent process will not be shared with third parties for marketing purposes.
+              </p>
+            </section>
+
+            {/* Types of SMS Communications */}
+            <section id="types-sms" className="flex flex-col gap-4 scroll-mt-6">
+              <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
+                <span className="text-P2-Gold font-mono text-base lg:text-lg">03.</span> Types of SMS Communications
+              </h2>
+              <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
+                If you have consented to receive text messages from Drift Financial, you may receive messages related to the following specific examples:
+              </p>
+              <ul className="flex flex-col gap-2 text-neutral-600 text-sm lg:text-base pl-5 list-disc">
+                <li>Appointment reminders</li>
+                <li>Follow-up messages</li>
+                <li>Conversations (external)</li>
+              </ul>
+            </section>
+
+            {/* Opt-In Method */}
+            <section id="opt-in" className="flex flex-col gap-4 scroll-mt-6">
+              <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
+                <span className="text-P2-Gold font-mono text-base lg:text-lg">04.</span> Opt-In Method
+              </h2>
+              <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
+                You may opt in to receive SMS messages from Drift Financial in the following ways:
+              </p>
+              <ul className="flex flex-col gap-2 text-neutral-600 text-sm lg:text-base pl-5 list-disc">
+                <li>By submitting an online form</li>
+              </ul>
+            </section>
+
             {/* No Condition of Purchase */}
             <section id="no-condition" className="flex flex-col gap-4 scroll-mt-6">
               <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
-                <span className="text-P2-Gold font-mono text-base lg:text-lg">02.</span> No Condition of Purchase
+                <span className="text-P2-Gold font-mono text-base lg:text-lg">05.</span> No Condition of Purchase
               </h2>
               <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
                 Your consent to receive calls or text messages is not required as a condition of obtaining any product or service from Drift Financial.
@@ -152,7 +195,7 @@ export default function TermsAndConditionsPage() {
             {/* Message Frequency */}
             <section id="frequency" className="flex flex-col gap-4 scroll-mt-6">
               <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
-                <span className="text-P2-Gold font-mono text-base lg:text-lg">03.</span> Message Frequency
+                <span className="text-P2-Gold font-mono text-base lg:text-lg">06.</span> Message Frequency
               </h2>
               <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
                 Message frequency may vary depending on your interaction with Drift Financial, the status of your loan transaction, and your communication preferences.
@@ -162,7 +205,7 @@ export default function TermsAndConditionsPage() {
             {/* Message and Data Rates */}
             <section id="rates" className="flex flex-col gap-4 scroll-mt-6">
               <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
-                <span className="text-P2-Gold font-mono text-base lg:text-lg">04.</span> Message and Data Rates
+                <span className="text-P2-Gold font-mono text-base lg:text-lg">07.</span> Message and Data Rates
               </h2>
               <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
                 Message and data rates may apply according to your wireless carrier’s terms and conditions.
@@ -175,7 +218,7 @@ export default function TermsAndConditionsPage() {
             {/* Opting Out of Text Messages */}
             <section id="opt-out" className="flex flex-col gap-4 scroll-mt-6">
               <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
-                <span className="text-P2-Gold font-mono text-base lg:text-lg">05.</span> Opting Out of Text Messages
+                <span className="text-P2-Gold font-mono text-base lg:text-lg">08.</span> Opting Out of Text Messages
               </h2>
               <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
                 You may opt out of receiving text messages at any time by replying:
@@ -197,7 +240,7 @@ export default function TermsAndConditionsPage() {
             {/* Assistance */}
             <section id="assistance" className="flex flex-col gap-4 scroll-mt-6">
               <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
-                <span className="text-P2-Gold font-mono text-base lg:text-lg">06.</span> Assistance & Help
+                <span className="text-P2-Gold font-mono text-base lg:text-lg">09.</span> Assistance & Help
               </h2>
               <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
                 For help regarding our text messaging program, reply:
@@ -227,10 +270,23 @@ export default function TermsAndConditionsPage() {
               </div>
             </section>
 
+            {/* Standard Messaging Disclosures */}
+            <section id="disclosures" className="flex flex-col gap-4 scroll-mt-6">
+              <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
+                <span className="text-P2-Gold font-mono text-base lg:text-lg">10.</span> Standard Messaging Disclosures
+              </h2>
+              <ul className="flex flex-col gap-2 text-neutral-600 text-sm lg:text-base pl-5 list-disc">
+                <li>Message and data rates may apply.</li>
+                <li>You can opt out at any time by texting &quot;STOP.&quot;</li>
+                <li>For assistance, text &quot;HELP&quot; or visit our <Link href="/privacy-policy" className="underline hover:text-P2-Gold transition-colors">Privacy Policy</Link> and <Link href="/terms-and-conditions" className="underline hover:text-P2-Gold transition-colors">Terms of Service</Link>.</li>
+                <li>Message frequency may vary.</li>
+              </ul>
+            </section>
+
             {/* Consent Revocation */}
             <section id="revocation" className="flex flex-col gap-4 scroll-mt-6">
               <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
-                <span className="text-P2-Gold font-mono text-base lg:text-lg">07.</span> Consent Revocation
+                <span className="text-P2-Gold font-mono text-base lg:text-lg">11.</span> Consent Revocation
               </h2>
               <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
                 You may revoke your consent to receive automated communications at any time by:
@@ -248,7 +304,7 @@ export default function TermsAndConditionsPage() {
             {/* Wireless Carrier Disclaimer */}
             <section id="disclaimer" className="flex flex-col gap-4 scroll-mt-6">
               <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
-                <span className="text-P2-Gold font-mono text-base lg:text-lg">08.</span> Wireless Carrier Disclaimer
+                <span className="text-P2-Gold font-mono text-base lg:text-lg">12.</span> Wireless Carrier Disclaimer
               </h2>
               <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
                 Wireless carriers are not liable for delayed or undelivered messages.
@@ -258,7 +314,7 @@ export default function TermsAndConditionsPage() {
             {/* Record of Consent */}
             <section id="record" className="flex flex-col gap-4 scroll-mt-6">
               <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
-                <span className="text-P2-Gold font-mono text-base lg:text-lg">09.</span> Record of Consent
+                <span className="text-P2-Gold font-mono text-base lg:text-lg">13.</span> Record of Consent
               </h2>
               <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
                 Drift Financial may maintain records of consent, including the date, time, source, and method by which consent was provided, for compliance and regulatory purposes.

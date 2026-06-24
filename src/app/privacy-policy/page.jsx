@@ -27,7 +27,7 @@ export default function PrivacyPolicyPage() {
   return (
     <main className="w-full min-h-screen bg-neutral-50 font-inter">
       <TopBar />
-      
+
       {/* Hero Section */}
       <section className="w-full bg-P1-Navy rounded-b-3xl lg:rounded-b-[40px] pb-16 lg:pb-24 flex justify-center">
         <div className="w-full max-w-[1360px] mx-auto">
@@ -59,7 +59,7 @@ export default function PrivacyPolicyPage() {
       {/* Content Section */}
       <section className="w-full py-12 lg:py-20 flex justify-center px-6 lg:px-10">
         <div className="w-full max-w-[1360px] grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-          
+
           {/* Sticky Sidebar Navigation (lg:col-span-4) */}
           <aside className="lg:col-span-4 sticky top-6 bg-white border border-neutral-200 rounded-3xl p-6 shadow-sm hidden lg:flex flex-col gap-6">
             <h3 className="text-P1-Navy text-base font-bold uppercase tracking-wider border-b border-neutral-100 pb-3">
@@ -80,7 +80,7 @@ export default function PrivacyPolicyPage() {
 
           {/* Policy Document (lg:col-span-8) */}
           <article className="lg:col-span-8 bg-white border border-neutral-200 rounded-3xl p-6 lg:p-12 shadow-sm flex flex-col gap-10">
-            
+
             {/* Introduction */}
             <section id="introduction" className="flex flex-col gap-4 scroll-mt-6">
               <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
@@ -102,7 +102,7 @@ export default function PrivacyPolicyPage() {
               <p className="text-neutral-600 text-sm lg:text-base leading-relaxed">
                 We may collect the following categories of information:
               </p>
-              
+
               <div className="flex flex-col gap-5 mt-2">
                 <div className="bg-neutral-50 border border-neutral-200 rounded-2xl p-5 flex flex-col gap-3">
                   <h4 className="text-P1-Navy text-sm lg:text-base font-bold uppercase tracking-wider flex items-center gap-2">
@@ -185,6 +185,9 @@ export default function PrivacyPolicyPage() {
                   </h4>
                   <p className="text-neutral-700 text-xs lg:text-sm font-semibold leading-relaxed">
                     We do not sell personal information to third parties for monetary compensation.
+                  </p>
+                  <p className="text-neutral-700 text-xs lg:text-sm font-semibold leading-relaxed mt-2">
+                    Mobile Opt-in, SMS Consent, and phone numbers collected for SMS communication purposes will not be shared with any third party or affiliates for marketing purposes.
                   </p>
                 </div>
               </div>

@@ -289,8 +289,8 @@ const ContactForm = () => {
                   disabled={status === 'loading'}
                   className="w-3.5 h-3.5 lg:w-5 lg:h-5 mt-0.5 bg-neutral-300 rounded-[2px] lg:rounded-[5px] shrink-0 cursor-pointer accent-P1-Navy disabled:opacity-50"
                 />
-                <span className="text-P1-Navy text-[8px] lg:text-base font-semibold font-inter group-hover:text-P2-Gold transition-colors">
-                  I agree to receive calls, text messages, and emails from Drift Financial as described below. View our <Link href="/privacy-policy" className="underline hover:text-P2-Gold transition-colors">Privacy Policy</Link> and <Link href="/terms-and-conditions" className="underline hover:text-P2-Gold transition-colors">Terms & Conditions</Link>.
+                <span className="text-P1-Navy text-[8px] lg:text-base font-semibold font-inter group-hover:text-P2-Gold transition-colors leading-relaxed">
+                  By checking this box, you agree to receive SMS messages from Drift Financial related to conversations(external). You may reply STOP to opt out at any time. Reply HELP to 888-338-2952 for assistance. Messages and data rates may apply. Message frequency will vary. Learn more on our <Link href="/privacy-policy" className="underline hover:text-P2-Gold transition-colors">Privacy Policy</Link> page and <Link href="/terms-and-conditions" className="underline hover:text-P2-Gold transition-colors">Terms & Conditions</Link>.
                 </span>
               </label>
             </div>
