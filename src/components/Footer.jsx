@@ -17,7 +17,7 @@ const Footer = () => {
               <img src="/asstes/footer-icon.svg" alt="Drift Financial" className="w-20 lg:w-48 cursor-pointer" />
             </Link>
             <p className="text-white text-[8px] lg:text-[10px] font-normal font-inter leading-3 lg:leading-4 opacity-80 text-justify">
-              Drift Financial Corporation is an Equal Housing Lender. As prohibited by federal law, we do not engage in business practices that discriminate based on race, color, religion, national origin, sex, marital status, age (provided you have the capacity to enter into a binding contract), because all or part of your income may be derived from any public assistance program, or because you have, in good faith, exercised any right under the Consumer Credit Protection Act. The federal agency that administers our compliance with these federal laws is the Federal Trade Commission, Equal Credit Opportunity, Washington, DC 20580.
+              Drift Financial LLC is an Equal Housing Lender. As prohibited by federal law, we do not engage in business practices that discriminate based on race, color, religion, national origin, sex, marital status, age (provided you have the capacity to enter into a binding contract), because all or part of your income may be derived from any public assistance program, or because you have, in good faith, exercised any right under the Consumer Credit Protection Act. The federal agency that administers our compliance with these federal laws is the Federal Trade Commission, Equal Credit Opportunity, Washington, DC 20580.
             </p>
           </div>
           
