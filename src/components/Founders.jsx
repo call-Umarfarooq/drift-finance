@@ -5,19 +5,19 @@ const Founders = ({ titleStart = "Your Future. ", titleGold = "Our Commitment.",
     {
       name: "Pete Grigoriou",
       nmls: "NMLS #999405",
-      image: "/funture-commitment/Rectangle 44-2.png",
+      image: "/future-commitment/Rectangle 44-2.png",
       linkedin: "https://www.linkedin.com/in/pete-grigoriou-41293173?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
     },
     {
       name: "Gassan Fatouhi",
       nmls: "NMLS #998868",
-      image: "/funture-commitment/Rectangle 44-1.png",
+      image: "/future-commitment/Rectangle 44-1.png",
       linkedin: "https://www.linkedin.com/in/gassan-fatouhi-148666405?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
     },
     {
       name: "Hassan Barada",
       nmls: "NMLS #1203216",
-      image: "/funture-commitment/Rectangle 44.png",
+      image: "/future-commitment/Rectangle 44.png",
       linkedin: "https://www.linkedin.com/in/hassan-barada-114a6a85?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
     }
   ];
