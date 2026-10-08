@@ -15,7 +15,8 @@ export default function PrivacyPolicyPage() {
     { id: "information-we-collect", label: "Information We Collect" },
     { id: "how-we-use", label: "How We Use Your Information" },
     { id: "information-sharing", label: "Information Sharing" },
-    { id: "text-calls", label: "Text & Telephone" },
+    { id: "text-messages", label: "Text Messages (SMS)" },
+    { id: "telephone-calls", label: "Telephone Calls" },
     { id: "email-communications", label: "Email Communications" },
     { id: "cookies", label: "Cookies & Tracking" },
     { id: "data-security", label: "Data Security" },
@@ -50,7 +51,7 @@ export default function PrivacyPolicyPage() {
 
             {/* Effective Date */}
             <p className="text-P2-Gold text-xs lg:text-base font-semibold font-inter uppercase tracking-widest mt-2">
-              Effective Date: May 1, 2026
+              Effective Date: May 1, 2026 · Last Updated: October 8, 2026
             </p>
           </div>
         </div>
@@ -87,10 +88,10 @@ export default function PrivacyPolicyPage() {
                 <span className="text-P2-Gold font-mono text-base lg:text-lg">01.</span> Introduction
               </h2>
               <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
-                Drift Financial (“Drift Financial,” “we,” “our,” or “us”) is committed to protecting the privacy and security of the personal information entrusted to us. This Privacy Policy explains how we collect, use, disclose, and safeguard information obtained through our website, mortgage services, communications, and related business activities.
+                Drift Financial (“Drift Financial,” “we,” “our,” or “us”) is committed to protecting the privacy and security of the personal information entrusted to us. This Privacy Policy explains how we collect, use, disclose, and safeguard information obtained through our website, our services, and our communications with you.
               </p>
               <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
-                By using our website or providing your information to us, you consent to the practices described in this Privacy Policy.
+                Providing your information to us or using our website does not, by itself, give consent to receive text messages. Consent to receive text messages is collected only through the separate, optional SMS checkbox described in Section 05.
               </p>
             </section>
 
@@ -150,14 +151,17 @@ export default function PrivacyPolicyPage() {
                 We may use your information to:
               </p>
               <ul className="flex flex-col gap-2 text-neutral-600 text-sm lg:text-base pl-5 list-disc">
-                <li>Evaluate and process mortgage applications</li>
+                <li>Evaluate and process applications you submit to us</li>
                 <li>Verify identity and prevent fraud</li>
-                <li>Communicate regarding loan products and services</li>
-                <li>Respond to inquiries and customer service requests</li>
+                <li>Respond to your inquiries and customer service requests</li>
+                <li>Communicate with you about your inquiry, your appointments, and requests you have already made</li>
                 <li>Comply with legal and regulatory requirements</li>
                 <li>Improve our website and customer experience</li>
-                <li>Provide updates, promotions, and marketing communications where permitted by law</li>
+                <li>Send updates about our services by email, where you have agreed and where permitted by law (you may unsubscribe at any time)</li>
               </ul>
+              <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
+                Text messages are used only for the customer-care purposes described in Section 05. <strong className="text-neutral-800">We do not use text messages to send loan offers, promotions, or marketing.</strong>
+              </p>
             </section>
 
             {/* Information Sharing */}
@@ -184,69 +188,79 @@ export default function PrivacyPolicyPage() {
                     Our Commitment
                   </h4>
                   <p className="text-neutral-700 text-xs lg:text-sm font-semibold leading-relaxed">
-                    We do not sell personal information to third parties for monetary compensation.
+                    We do not sell or rent personal information.
                   </p>
                   <p className="text-neutral-700 text-xs lg:text-sm font-semibold leading-relaxed mt-2">
-                    Mobile Opt-in, SMS Consent, and phone numbers collected for SMS communication purposes will not be shared with any third party or affiliates for marketing purposes.
+                    No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. All the above categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.
+                  </p>
+                  <p className="text-neutral-700 text-xs lg:text-sm font-semibold leading-relaxed mt-2">
+                    Information may be shared only with subcontractors that support our services, such as our messaging platform and customer-service providers, solely to deliver the messages you requested.
                   </p>
                 </div>
               </div>
             </section>
 
-            {/* Text Messages and Telephone Communications */}
-            <section id="text-calls" className="flex flex-col gap-4 scroll-mt-6">
+            {/* Text Messages (SMS) */}
+            <section id="text-messages" className="flex flex-col gap-4 scroll-mt-6">
               <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
-                <span className="text-P2-Gold font-mono text-base lg:text-lg">05.</span> Text Messages and Telephone Communications
+                <span className="text-P2-Gold font-mono text-base lg:text-lg">05.</span> Text Messages (SMS)
               </h2>
               <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
-                By providing your telephone number, you expressly consent to receive calls and text messages from Drift Financial regarding your mortgage inquiry, application, loan status, account information, and related services.
+                <strong className="text-neutral-800">Drift Financial Customer Care Texts.</strong> If you check the optional SMS consent box on our contact form, you agree to receive conversational text messages from Drift Financial about your inquiry. These include replies to your questions, appointment scheduling and reminders, follow-ups you request, and updates on a request or application you have already submitted. We do not send loan offers, promotions, or marketing by text.
               </p>
-              <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
-                These communications may be sent using automated technology, including automatic telephone dialing systems and prerecorded messages where permitted by law.
-              </p>
+              <ul className="flex flex-col gap-2 text-neutral-600 text-sm lg:text-base pl-5 list-disc">
+                <li>SMS consent is optional and is <strong className="text-neutral-800">not a condition of any purchase or service</strong>.</li>
+                <li>SMS consent is separate from consent to phone calls and email.</li>
+                <li>Message frequency varies. Message and data rates may apply.</li>
+                <li>Carriers are not liable for delayed or undelivered messages.</li>
+              </ul>
 
               <div className="bg-neutral-50 border border-neutral-200 rounded-2xl p-5 lg:p-6 flex flex-col gap-4 mt-2">
                 <h4 className="text-P1-Navy text-sm lg:text-base font-bold uppercase tracking-wider border-b border-neutral-200 pb-2">
                   📱 Text Message Opt-Out & Assistance
                 </h4>
                 <p className="text-neutral-600 text-xs lg:text-sm leading-relaxed">
-                  You may opt out of receiving text messages at any time by replying:
+                  You may opt out of receiving text messages at any time by replying <strong className="text-neutral-800">STOP</strong> (or END, CANCEL, UNSUBSCRIBE, or QUIT) to any message:
                 </p>
                 <div className="flex items-center justify-center p-3 bg-white border border-neutral-200 rounded-xl max-w-[200px] mx-auto select-all cursor-pointer shadow-sm">
                   <span className="text-P1-Navy font-mono font-black tracking-widest text-lg lg:text-xl">STOP</span>
                 </div>
                 <p className="text-neutral-600 text-xs lg:text-sm leading-relaxed">
-                  After opting out, you may receive a confirmation message confirming your opt-out request. Message and data rates may apply.
+                  You will receive one final message confirming your opt-out, and no further text messages will be sent. Reply <strong className="text-neutral-800">START</strong> to re-subscribe.
                 </p>
                 <p className="text-neutral-600 text-xs lg:text-sm leading-relaxed">
-                  For assistance, reply <span className="font-mono font-bold text-neutral-800">HELP</span> or contact us directly at:
+                  For assistance, reply <strong className="font-mono font-bold text-neutral-800">HELP</strong> or contact us directly at:
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-neutral-600 text-xs lg:text-sm font-semibold mt-1">
                   <span className="flex items-center gap-2">📞 Phone: <a href="tel:888-338-2952" className="text-P2-Gold hover:underline">888-338-2952</a></span>
                   <span className="flex items-center gap-2">✉️ Email: <a href="mailto:Drift@Driftfinancial.com" className="text-P2-Gold hover:underline">Drift@Driftfinancial.com</a></span>
                 </div>
+                <p className="text-neutral-600 text-xs lg:text-sm leading-relaxed">
+                  Full program terms: <a href="/terms-and-conditions" className="text-P2-Gold font-semibold hover:underline">SMS Terms &amp; Conditions</a>
+                </p>
               </div>
+            </section>
 
-              <div className="bg-neutral-50 border border-neutral-200 rounded-2xl p-5 flex flex-col gap-3">
-                <h4 className="text-P1-Navy text-sm lg:text-base font-bold uppercase tracking-wider">
-                  📞 Call Opt-Out
-                </h4>
-                <p className="text-neutral-600 text-xs lg:text-sm leading-relaxed text-justify">
-                  You may request that we stop non-essential telephone communications by contacting us using the information provided below.
-                </p>
-                <p className="text-neutral-500 text-[11px] lg:text-xs italic leading-relaxed text-justify">
-                  Please note that we may continue to contact you regarding active transactions, legal notices, servicing matters, or other communications required by law.
-                </p>
-              </div>
+            {/* Telephone Calls */}
+            <section id="telephone-calls" className="flex flex-col gap-4 scroll-mt-6">
+              <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
+                <span className="text-P2-Gold font-mono text-base lg:text-lg">06.</span> Telephone Calls
+              </h2>
+              <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
+                If you check the separate phone-call consent box, you agree that Drift Financial may call you about your inquiry. You may ask us to stop non-essential calls at any time by contacting us using the information below.
+              </p>
+              <p className="text-neutral-500 text-[11px] lg:text-xs italic leading-relaxed text-justify">
+                We may still contact you by phone or email about active transactions, legal notices, servicing matters, or other communications required by law.
+              </p>
             </section>
 
             {/* Email Communications */}
             <section id="email-communications" className="flex flex-col gap-4 scroll-mt-6">
               <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
-                <span className="text-P2-Gold font-mono text-base lg:text-lg">06.</span> Email Communications
+                <span className="text-P2-Gold font-mono text-base lg:text-lg">07.</span> Email Communications
               </h2>
               <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
-                You may opt out of marketing emails by clicking the “unsubscribe” link included in marketing communications or by contacting us directly.
+                You may opt out of marketing emails by clicking the “unsubscribe” link included in those emails or by contacting us directly.
               </p>
               <p className="text-neutral-500 text-[11px] lg:text-xs italic leading-relaxed text-justify">
                 Operational, transactional, and legally required communications may still be sent.
@@ -256,7 +270,7 @@ export default function PrivacyPolicyPage() {
             {/* Cookies and Tracking Technologies */}
             <section id="cookies" className="flex flex-col gap-4 scroll-mt-6">
               <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
-                <span className="text-P2-Gold font-mono text-base lg:text-lg">07.</span> Cookies and Tracking Technologies
+                <span className="text-P2-Gold font-mono text-base lg:text-lg">08.</span> Cookies and Tracking Technologies
               </h2>
               <p className="text-neutral-600 text-sm lg:text-base leading-relaxed">
                 Our website may use cookies and similar technologies to:
@@ -265,7 +279,7 @@ export default function PrivacyPolicyPage() {
                 <li>Improve website functionality</li>
                 <li>Analyze website traffic</li>
                 <li>Enhance user experience</li>
-                <li>Support marketing efforts</li>
+                <li>Understand how visitors find our website</li>
               </ul>
               <p className="text-neutral-600 text-sm lg:text-base leading-relaxed mt-2 text-justify">
                 Most browsers allow you to manage cookie preferences through browser settings.
@@ -275,7 +289,7 @@ export default function PrivacyPolicyPage() {
             {/* Data Security */}
             <section id="data-security" className="flex flex-col gap-4 scroll-mt-6">
               <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
-                <span className="text-P2-Gold font-mono text-base lg:text-lg">08.</span> Data Security
+                <span className="text-P2-Gold font-mono text-base lg:text-lg">09.</span> Data Security
               </h2>
               <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
                 We maintain administrative, technical, and physical safeguards designed to protect personal information from unauthorized access, disclosure, alteration, or destruction.
@@ -288,7 +302,7 @@ export default function PrivacyPolicyPage() {
             {/* Retention of Information */}
             <section id="retention" className="flex flex-col gap-4 scroll-mt-6">
               <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
-                <span className="text-P2-Gold font-mono text-base lg:text-lg">09.</span> Retention of Information
+                <span className="text-P2-Gold font-mono text-base lg:text-lg">10.</span> Retention of Information
               </h2>
               <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
                 We retain personal information for as long as necessary to provide services, comply with legal obligations, resolve disputes, enforce agreements, and satisfy regulatory requirements applicable to mortgage lending activities.
@@ -301,7 +315,7 @@ export default function PrivacyPolicyPage() {
             {/* Consumer Rights */}
             <section id="consumer-rights" className="flex flex-col gap-4 scroll-mt-6">
               <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
-                <span className="text-P2-Gold font-mono text-base lg:text-lg">10.</span> Consumer Rights & Children's Privacy
+                <span className="text-P2-Gold font-mono text-base lg:text-lg">11.</span> Consumer Rights & Children's Privacy
               </h2>
               <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
                 Depending on your state of residence, you may have rights regarding your personal information, including rights to access, correct, delete, or limit the use of certain information. To exercise any applicable privacy rights, please contact us using the details below.
@@ -317,10 +331,10 @@ export default function PrivacyPolicyPage() {
             {/* Contact Information */}
             <section id="contact-information" className="flex flex-col gap-4 scroll-mt-6">
               <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
-                <span className="text-P2-Gold font-mono text-base lg:text-lg">11.</span> Contact Information
+                <span className="text-P2-Gold font-mono text-base lg:text-lg">12.</span> Contact Information
               </h2>
               <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
-                If you have questions regarding this Privacy Policy or our privacy practices, please contact:
+                If you have questions regarding this Privacy Policy or our privacy practices, please contact us. See also our <a href="/terms-and-conditions" className="text-P2-Gold font-semibold hover:underline">SMS Terms &amp; Conditions</a>.
               </p>
 
               <div className="bg-gradient-to-br from-P1-Navy to-neutral-900 text-white rounded-2xl p-6 lg:p-8 flex flex-col gap-4 shadow-md relative overflow-hidden select-none mt-2">
