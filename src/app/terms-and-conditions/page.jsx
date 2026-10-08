@@ -6,25 +6,23 @@ import Footer from '@/components/Footer';
 import CTA from '@/components/CTA';
 
 export const metadata = {
-  title: "Terms & Conditions · Drift Financial",
-  description: "Read the Terms & Conditions and TCPA & Text Messaging Consent Disclosure of Drift Financial.",
+  title: "SMS Terms & Conditions · Drift Financial",
+  description: "Drift Financial SMS Terms & Conditions for the Drift Financial Customer Care Texts program.",
 };
 
 export default function TermsAndConditionsPage() {
   const sections = [
-    { id: "consent", label: "Consent to Contact" },
-    { id: "sms-consent", label: "SMS Consent Communication" },
-    { id: "types-sms", label: "Types of SMS Communications" },
-    { id: "opt-in", label: "Opt-In Method" },
-    { id: "no-condition", label: "No Condition of Purchase" },
+    { id: "program", label: "Program Description" },
+    { id: "opt-in", label: "How to Opt In" },
+    { id: "types-sms", label: "Types of Messages" },
     { id: "frequency", label: "Message Frequency" },
     { id: "rates", label: "Message & Data Rates" },
     { id: "opt-out", label: "Opting Out" },
-    { id: "assistance", label: "Assistance & Help" },
-    { id: "disclosures", label: "Standard Messaging Disclosures" },
-    { id: "revocation", label: "Consent Revocation" },
+    { id: "assistance", label: "Help" },
+    { id: "privacy", label: "Privacy" },
     { id: "disclaimer", label: "Carrier Disclaimer" },
     { id: "record", label: "Record of Consent" },
+    { id: "changes", label: "Changes" },
   ];
 
   return (
@@ -53,7 +51,7 @@ export default function TermsAndConditionsPage() {
 
             {/* Effective Date */}
             <p className="text-P2-Gold text-xs lg:text-base font-semibold font-inter uppercase tracking-widest mt-2">
-              Effective Date: May 1, 2026
+              Effective Date: May 1, 2026 · Last Updated: October 8, 2026
             </p>
           </div>
         </div>
@@ -86,178 +84,108 @@ export default function TermsAndConditionsPage() {
 
             <div className="text-center lg:text-left border-b border-neutral-100 pb-6">
               <h2 className="text-P1-Navy text-xl lg:text-3xl font-bold font-inter leading-tight">
-                TCPA & Text Messaging Consent Disclosure
+                Drift Financial SMS Terms &amp; Conditions
               </h2>
               <p className="text-neutral-500 text-sm mt-2 font-medium">
-                Drift Financial Policy and Disclosures
+                Drift Financial Customer Care Texts
               </p>
             </div>
 
-            {/* Consent to Contact */}
-            <section id="consent" className="flex flex-col gap-4 scroll-mt-6">
+            <div className="bg-P2-Gold/10 border border-P2-Gold/20 rounded-2xl p-5 flex flex-col gap-2">
+              <h4 className="text-P1-Navy text-sm lg:text-base font-bold uppercase tracking-wider">
+                Summary
+              </h4>
+              <p className="text-neutral-700 text-xs lg:text-sm leading-relaxed">
+                By opting in to Drift Financial Customer Care Texts, you agree to receive recurring conversational text messages from Drift Financial about your inquiry. Message frequency varies. Message and data rates may apply. Reply <strong className="text-neutral-900">STOP</strong> to cancel or <strong className="text-neutral-900">HELP</strong> for help. Support: <a href="tel:888-338-2952" className="text-P2-Gold font-semibold hover:underline">888-338-2952</a> or <a href="mailto:Drift@Driftfinancial.com" className="text-P2-Gold font-semibold hover:underline">Drift@Driftfinancial.com</a>. Carriers are not liable for delayed or undelivered messages. See our <Link href="/privacy-policy" className="text-P2-Gold font-semibold hover:underline">Privacy Policy</Link>.
+              </p>
+            </div>
+
+            <section id="program" className="flex flex-col gap-4 scroll-mt-6">
               <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
-                <span className="text-P2-Gold font-mono text-base lg:text-lg">01.</span> Consent to Contact
+                <span className="text-P2-Gold font-mono text-base lg:text-lg">01.</span> Program Description
               </h2>
               <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
-                By providing your phone number to Drift Financial through our website, online forms, loan applications, advertisements, social media platforms, or any other communication channel, you expressly consent to receive communications from Drift Financial, its employees, agents, and service providers.
+                <strong className="text-neutral-800">Program name:</strong> Drift Financial Customer Care Texts.
               </p>
-
-              <div className="bg-neutral-50 border border-neutral-200 rounded-2xl p-5 flex flex-col gap-3 mt-2">
-                <h4 className="text-P1-Navy text-sm lg:text-base font-bold uppercase tracking-wider">
-                  📢 Communication Formats
-                </h4>
-                <p className="text-neutral-600 text-xs lg:text-sm">
-                  These communications may include:
-                </p>
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-neutral-600 text-xs lg:text-sm pl-4 list-disc">
-                  <li>Phone calls</li>
-                  <li>Text messages (SMS and MMS)</li>
-                  <li>Artificial or prerecorded voice messages</li>
-                  <li>Emails</li>
-                  <li>Other electronic communications</li>
-                </ul>
-              </div>
-
-              <div className="bg-neutral-50 border border-neutral-200 rounded-2xl p-5 flex flex-col gap-3">
-                <h4 className="text-P1-Navy text-sm lg:text-base font-bold uppercase tracking-wider">
-                  📝 Topics Covered
-                </h4>
-                <p className="text-neutral-600 text-xs lg:text-sm">
-                  Communications may relate to:
-                </p>
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-neutral-600 text-xs lg:text-sm pl-4 list-disc">
-                  <li>Mortgage loan inquiries</li>
-                  <li>Loan applications</li>
-                  <li>Loan status updates</li>
-                  <li>Mortgage products and services</li>
-                  <li>Appointment scheduling</li>
-                  <li>Customer service</li>
-                  <li>Promotional and marketing offers</li>
-                </ul>
-              </div>
-
               <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
-                Communications may be made using automated technology, including an automatic telephone dialing system (ATDS), where permitted by applicable law.
+                Drift Financial sends text messages only in connection with an inquiry you have made. We do not send loan offers, rate promotions, or marketing by text.
               </p>
             </section>
 
-            {/* SMS Consent Communication */}
-            <section id="sms-consent" className="flex flex-col gap-4 scroll-mt-6">
-              <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
-                <span className="text-P2-Gold font-mono text-base lg:text-lg">02.</span> SMS Consent Communication
-              </h2>
-              <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
-                The information (Phone Numbers) obtained as part of the SMS consent process will not be shared with third parties for marketing purposes.
-              </p>
-            </section>
-
-            {/* Types of SMS Communications */}
-            <section id="types-sms" className="flex flex-col gap-4 scroll-mt-6">
-              <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
-                <span className="text-P2-Gold font-mono text-base lg:text-lg">03.</span> Types of SMS Communications
-              </h2>
-              <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
-                If you have consented to receive text messages from Drift Financial, you may receive messages related to the following specific examples:
-              </p>
-              <ul className="flex flex-col gap-2 text-neutral-600 text-sm lg:text-base pl-5 list-disc">
-                <li>Appointment reminders</li>
-                <li>Follow-up messages</li>
-                <li>Conversations (external)</li>
-              </ul>
-            </section>
-
-            {/* Opt-In Method */}
             <section id="opt-in" className="flex flex-col gap-4 scroll-mt-6">
               <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
-                <span className="text-P2-Gold font-mono text-base lg:text-lg">04.</span> Opt-In Method
+                <span className="text-P2-Gold font-mono text-base lg:text-lg">02.</span> How to Opt In
               </h2>
               <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
-                You may opt in to receive SMS messages from Drift Financial in the following ways:
+                Check the optional SMS consent box (unchecked by default) on our contact form at <Link href="/contact" className="text-P2-Gold font-semibold hover:underline">https://www.driftfinancial.com/contact</Link> and submit the form. The SMS box is separate from email and phone-call consent.
               </p>
+              <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
+                Entering a phone number does not, by itself, create SMS consent. SMS consent is not a condition of any purchase or service.
+              </p>
+            </section>
+
+            <section id="types-sms" className="flex flex-col gap-4 scroll-mt-6">
+              <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
+                <span className="text-P2-Gold font-mono text-base lg:text-lg">03.</span> Types of Messages
+              </h2>
               <ul className="flex flex-col gap-2 text-neutral-600 text-sm lg:text-base pl-5 list-disc">
-                <li>By submitting an online form</li>
+                <li>Replies to questions you send us</li>
+                <li>Appointment scheduling and reminders</li>
+                <li>Follow-ups on an inquiry you submitted</li>
+                <li>Updates on a request or application you have already submitted, including document requests</li>
               </ul>
             </section>
 
-            {/* No Condition of Purchase */}
-            <section id="no-condition" className="flex flex-col gap-4 scroll-mt-6">
-              <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
-                <span className="text-P2-Gold font-mono text-base lg:text-lg">05.</span> No Condition of Purchase
-              </h2>
-              <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
-                Your consent to receive calls or text messages is not required as a condition of obtaining any product or service from Drift Financial.
-              </p>
-              <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
-                You may obtain information about our services without providing consent to receive automated communications by contacting us directly.
-              </p>
-            </section>
-
-            {/* Message Frequency */}
             <section id="frequency" className="flex flex-col gap-4 scroll-mt-6">
               <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
-                <span className="text-P2-Gold font-mono text-base lg:text-lg">06.</span> Message Frequency
+                <span className="text-P2-Gold font-mono text-base lg:text-lg">04.</span> Message Frequency
               </h2>
               <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
-                Message frequency may vary depending on your interaction with Drift Financial, the status of your loan transaction, and your communication preferences.
+                Message frequency varies based on your inquiry and appointments.
               </p>
             </section>
 
-            {/* Message and Data Rates */}
             <section id="rates" className="flex flex-col gap-4 scroll-mt-6">
               <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
-                <span className="text-P2-Gold font-mono text-base lg:text-lg">07.</span> Message and Data Rates
+                <span className="text-P2-Gold font-mono text-base lg:text-lg">05.</span> Message and Data Rates
               </h2>
               <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
-                Message and data rates may apply according to your wireless carrier’s terms and conditions.
-              </p>
-              <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
-                Drift Financial is not responsible for any charges imposed by your mobile carrier.
+                Message and data rates may apply according to your wireless carrier&rsquo;s plan. Drift Financial is not responsible for charges imposed by your mobile carrier.
               </p>
             </section>
 
-            {/* Opting Out of Text Messages */}
             <section id="opt-out" className="flex flex-col gap-4 scroll-mt-6">
               <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
-                <span className="text-P2-Gold font-mono text-base lg:text-lg">08.</span> Opting Out of Text Messages
+                <span className="text-P2-Gold font-mono text-base lg:text-lg">06.</span> Opting Out
               </h2>
               <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
-                You may opt out of receiving text messages at any time by replying:
+                Reply <strong className="text-neutral-800">STOP</strong>, END, CANCEL, UNSUBSCRIBE, or QUIT to any message to opt out:
               </p>
               <div className="flex items-center justify-center p-3 bg-neutral-50 border border-neutral-200 rounded-xl max-w-[200px] mx-auto select-all cursor-pointer shadow-sm">
                 <span className="text-P1-Navy font-mono font-black tracking-widest text-lg lg:text-xl">STOP</span>
               </div>
               <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
-                to any text message received from Drift Financial.
-              </p>
-              <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
-                Upon receipt of your opt-out request, we will make reasonable efforts to discontinue future text messages, except where required for legal, compliance, or active transaction purposes.
-              </p>
-              <p className="text-neutral-500 text-xs italic leading-relaxed text-justify">
-                You may receive a final confirmation message confirming your opt-out request.
+                You will receive one final message confirming your opt-out, and no further text messages will be sent. You may also revoke consent by any reasonable means, including calling or emailing us. To re-subscribe, reply <strong className="text-neutral-800">START</strong>.
               </p>
             </section>
 
-            {/* Assistance */}
             <section id="assistance" className="flex flex-col gap-4 scroll-mt-6">
               <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
-                <span className="text-P2-Gold font-mono text-base lg:text-lg">09.</span> Assistance & Help
+                <span className="text-P2-Gold font-mono text-base lg:text-lg">07.</span> Help
               </h2>
               <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
-                For help regarding our text messaging program, reply:
+                Reply <strong className="text-neutral-800">HELP</strong> to any message for help, or contact Drift Financial support:
               </p>
-              <div className="flex items-center justify-center p-3 bg-neutral-50 border border-neutral-200 rounded-xl max-w-[200px] mx-auto select-all cursor-pointer shadow-sm">
-                <span className="text-P1-Navy font-mono font-black tracking-widest text-lg lg:text-xl">HELP</span>
-              </div>
-              <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
-                or contact us directly:
-              </p>
-
               <div className="bg-gradient-to-br from-P1-Navy to-neutral-900 text-white rounded-2xl p-6 lg:p-8 flex flex-col gap-4 shadow-md relative overflow-hidden select-none mt-2">
                 <div className="absolute -top-10 -right-10 w-24 h-24 bg-white/5 rounded-full blur-xl"></div>
                 <h4 className="text-P2-Gold text-base lg:text-lg font-bold tracking-wider uppercase">
                   Drift Financial
                 </h4>
                 <div className="flex flex-col gap-3 text-neutral-300 text-xs lg:text-sm">
+                  <div className="flex items-start gap-2.5">
+                    <span className="text-base">📍</span>
+                    <span>209 W Sixth St, Royal Oak MI 48067</span>
+                  </div>
                   <div className="flex items-center gap-2.5">
                     <span className="text-base">📞</span>
                     <a href="tel:888-338-2952" className="hover:text-white hover:underline text-white font-semibold">888-338-2952</a>
@@ -270,54 +198,42 @@ export default function TermsAndConditionsPage() {
               </div>
             </section>
 
-            {/* Standard Messaging Disclosures */}
-            <section id="disclosures" className="flex flex-col gap-4 scroll-mt-6">
+            <section id="privacy" className="flex flex-col gap-4 scroll-mt-6">
               <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
-                <span className="text-P2-Gold font-mono text-base lg:text-lg">10.</span> Standard Messaging Disclosures
-              </h2>
-              <ul className="flex flex-col gap-2 text-neutral-600 text-sm lg:text-base pl-5 list-disc">
-                <li>Message and data rates may apply.</li>
-                <li>You can opt out at any time by texting &quot;STOP.&quot;</li>
-                <li>For assistance, text &quot;HELP&quot; or visit our <Link href="/privacy-policy" className="underline hover:text-P2-Gold transition-colors">Privacy Policy</Link> and <Link href="/terms-and-conditions" className="underline hover:text-P2-Gold transition-colors">Terms of Service</Link>.</li>
-                <li>Message frequency may vary.</li>
-              </ul>
-            </section>
-
-            {/* Consent Revocation */}
-            <section id="revocation" className="flex flex-col gap-4 scroll-mt-6">
-              <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
-                <span className="text-P2-Gold font-mono text-base lg:text-lg">11.</span> Consent Revocation
+                <span className="text-P2-Gold font-mono text-base lg:text-lg">08.</span> Privacy
               </h2>
               <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
-                You may revoke your consent to receive automated communications at any time by:
+                No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. Text messaging originator opt-in data and consent will not be shared with any third parties. Subcontractors that deliver our messages are the only exception, and they use it only to provide the service.
               </p>
-              <ul className="flex flex-col gap-2 text-neutral-600 text-sm lg:text-base pl-5 list-disc">
-                <li>Replying STOP to a text message</li>
-                <li>Contacting Drift Financial directly</li>
-                <li>Submitting a written request using our contact information</li>
-              </ul>
               <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
-                Revoking consent does not affect communications that are legally required or necessary to service an active loan transaction.
+                See our <Link href="/privacy-policy" className="text-P2-Gold font-semibold hover:underline">Privacy Policy</Link>.
               </p>
             </section>
 
-            {/* Wireless Carrier Disclaimer */}
             <section id="disclaimer" className="flex flex-col gap-4 scroll-mt-6">
               <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
-                <span className="text-P2-Gold font-mono text-base lg:text-lg">12.</span> Wireless Carrier Disclaimer
+                <span className="text-P2-Gold font-mono text-base lg:text-lg">09.</span> Carrier Disclaimer
               </h2>
               <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
-                Wireless carriers are not liable for delayed or undelivered messages.
+                Carriers (including T-Mobile, AT&amp;T, and Verizon) are not liable for delayed or undelivered messages.
               </p>
             </section>
 
-            {/* Record of Consent */}
             <section id="record" className="flex flex-col gap-4 scroll-mt-6">
               <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
-                <span className="text-P2-Gold font-mono text-base lg:text-lg">13.</span> Record of Consent
+                <span className="text-P2-Gold font-mono text-base lg:text-lg">10.</span> Record of Consent
               </h2>
               <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
-                Drift Financial may maintain records of consent, including the date, time, source, and method by which consent was provided, for compliance and regulatory purposes.
+                Drift Financial may keep records of consent, including the date, time, source, and method by which consent was given, for compliance and regulatory purposes.
+              </p>
+            </section>
+
+            <section id="changes" className="flex flex-col gap-4 scroll-mt-6">
+              <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
+                <span className="text-P2-Gold font-mono text-base lg:text-lg">11.</span> Changes
+              </h2>
+              <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
+                We may update these terms. Changes will be posted on this page with an updated effective date.
               </p>
             </section>
 
