@@ -22,6 +22,7 @@ export default function TermsAndConditionsPage() {
     { id: "privacy", label: "Privacy" },
     { id: "disclaimer", label: "Carrier Disclaimer" },
     { id: "record", label: "Record of Consent" },
+    { id: "age", label: "Age Restriction" },
     { id: "changes", label: "Changes" },
   ];
 
@@ -228,9 +229,19 @@ export default function TermsAndConditionsPage() {
               </p>
             </section>
 
+            {/* Age Restriction */}
+            <section id="age" className="flex flex-col gap-4 scroll-mt-6">
+              <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
+                <span className="text-P2-Gold font-mono text-base lg:text-lg">11.</span> Age Restriction
+              </h2>
+              <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
+                <strong className="text-neutral-800">Age Restriction:</strong> You must be 18 years or older to participate in our SMS program.
+              </p>
+            </section>
+
             <section id="changes" className="flex flex-col gap-4 scroll-mt-6">
               <h2 className="text-P1-Navy text-xl lg:text-2xl font-bold font-inter border-b border-neutral-100 pb-2 flex items-center gap-3">
-                <span className="text-P2-Gold font-mono text-base lg:text-lg">11.</span> Changes
+                <span className="text-P2-Gold font-mono text-base lg:text-lg">12.</span> Changes
               </h2>
               <p className="text-neutral-600 text-sm lg:text-base leading-relaxed text-justify">
                 We may update these terms. Changes will be posted on this page with an updated effective date.
