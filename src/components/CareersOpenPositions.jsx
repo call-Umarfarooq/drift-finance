@@ -11,8 +11,6 @@ const CareersOpenPositions = () => {
     }
   ];
 
-  const categories = ["View All", "Development", "Design", "Marketing"];
-
   return (
     <section className="w-full bg-neutral-100 flex justify-center py-10 lg:py-20">
       <div className="w-full max-w-[1360px] mx-auto px-6 lg:px-10 flex flex-col items-center gap-8 lg:gap-12">
@@ -27,21 +25,6 @@ const CareersOpenPositions = () => {
           </div>
         </div>
 
-        {/* Filters */}
-        <div className="w-full flex flex-row overflow-x-auto lg:overflow-visible no-scrollbar justify-start items-center gap-2.5 lg:gap-4 mb-2 lg:mb-0">
-          {categories.map((cat, i) => (
-            <button 
-              key={cat}
-              className={`whitespace-nowrap px-4 lg:px-8 py-2 lg:py-2.5 rounded-full text-[10px] lg:text-sm font-semibold font-inter transition ${
-                i === 0 
-                ? 'bg-teal-900 text-white' 
-                : 'outline outline-1 outline-offset-[-1px] outline-P1-Navy text-P1-Navy hover:bg-black/5'
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
 
         {/* Job Listings */}
         <div className="w-full flex flex-col">
