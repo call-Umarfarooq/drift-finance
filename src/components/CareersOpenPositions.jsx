@@ -8,18 +8,6 @@ const CareersOpenPositions = () => {
       description: "At Drift Financial, our Loan Originators aren't just salespeople — they're trusted advisors.",
       location: "100% Remote",
       type: "Full-time"
-    },
-    {
-      title: "Loan Processor",
-      description: "Keep every deal moving — you're the engine behind every clean, fast close at Drift Financial.",
-      location: "100% Remote",
-      type: "Full-time"
-    },
-    {
-      title: "Executive Assistant",
-      description: "Work side by side with three industry-leading principals — keeping Drift Financial running at full speed.",
-      location: "100% Remote",
-      type: "Full-time"
     }
   ];
 

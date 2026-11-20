@@ -75,7 +75,7 @@ const Footer = () => {
                   Mortgage Calculator
                 </Link>
                 <Link
-                  href="/carears"
+                  href="/careers"
                   className="text-white text-[10px] lg:text-sm font-normal font-inter hover:opacity-80 transition-opacity leading-4"
                 >
                   Careers
