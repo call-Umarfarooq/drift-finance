@@ -13,7 +13,7 @@ export const metadata = {
   description: "Join the team at Drift Financial. Explore our open positions, learn about our values, and build your career with a leading financial service provider.",
 };
 
-const CarearsPage = () => {
+const CareersPage = () => {
     return (
         <main className="w-full min-h-screen bg-white font-inter">
             <TopBar />
@@ -33,4 +33,4 @@ const CarearsPage = () => {
     )
 }
 
-export default CarearsPage
+export default CareersPage
